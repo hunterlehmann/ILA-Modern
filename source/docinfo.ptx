@@ -10,7 +10,7 @@
   <!--<blurb shelf="AP Computer Science"> A simple string (no markup is allowed) to describe your book. </blurb>-->
 
   <directories external="../assets" />
-
+  <rename element="observation">Example</rename>
   <defaults>
     <xrefs text="phrase-hybrid" />
   </defaults>
@@ -19,7 +19,6 @@
   <!-- to define these semantically, so that the macro relates to what-->
   <!-- it defines. -->
   <macros>
-    \newcommand{\amp}{&amp;}
 \newcommand{\R}{\mathbf R}
 \newcommand{\C}{\mathbf C}
 \renewcommand{\mathbb}[1]{\mathbf{#1}}
@@ -33,8 +32,8 @@
 \newcommand{\Id}{\operatorname{Id}}
 \newcommand{\Tr}{\operatorname{Tr}}
 \newcommand{\adj}{\operatorname{adj}}
-\newcommand{\Re}{\operatorname{Re}}
-\newcommand{\Im}{\operatorname{Im}}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
 \newcommand{\dist}{\operatorname{dist}}
 \newcommand{\refl}{\operatorname{ref}}
 \newcommand{\inv}{^{-1}}
@@ -50,6 +49,17 @@
 
 \newcommand{\leading}[1]{\color{red}#1}
 \newcommand{\setof}[1]{\left\{#1\right\}}
+
+\newenvironment{smm}{\left(\begin{smallmatrix}}
+                    {\end{smallmatrix}\right)}
+\newcommand*\smallmat[4]%
+  {\ensuremath{\begin{smm}#1&amp;#2\\#3&amp;#4\end{smm}}}
+  </macros>
+
+  <!-- If you put any latex-image elements you can include preambles -->
+  <!-- for those in the next element. -->
+  <latex-image-preamble>
+    \usepackage{xcolor}
 
 \definecolor{seq-red}{rgb}{0.8941,0.1020,0.1098}
 \definecolor{seq-blue}{rgb}{0.2157,0.4941,0.7216}
@@ -69,39 +79,28 @@
 \definecolor{seq7}{rgb}{0.6510,0.3373,0.1569}
 \definecolor{seq8}{rgb}{0.9686,0.5059,0.7490}
 
-\newenvironment{smm}{\left(\begin{smallmatrix}}
-                    {\end{smallmatrix}\right)}
-\newcommand*\smallmat[4]%
-  {\ensuremath{\begin{smm}#1&amp;#2\\#3&amp;#4\end{smm}}}
-  </macros>
-
-  <!-- If you put any latex-image elements you can include preambles -->
-  <!-- for those in the next element. -->
-  <latex-image-preamble>
    \usepackage{tikz}
 \usetikzlibrary{backgrounds}
 \usetikzlibrary{arrows}
-\usetikzlibrary{snakes}
 \usetikzlibrary{matrix}
 \usetikzlibrary{positioning,fit}
 \usetikzlibrary{shapes,decorations,decorations.pathmorphing}
 \usetikzlibrary{decorations.markings}
 \usetikzlibrary{calc,arrows.meta,quotes}
-\usetikzlibrary{ipe}
 \usetikzlibrary{angles}
 \usetikzlibrary{datavisualization.formats.functions}
 \usetikzlibrary{math}
-
+\tikzset{ grid lines/.style={ step=1, draw=gray!40, very thin } }
 \tikzset{
         whitebg/.style={fill=white},
-        whitebg nodes/.style={every node/.append style=whitebg,
-            every label/.append style=whitebg,
-            every pin/.append style=whitebg},
+        whitebg nodes/.style={every node/.append style={whitebg},
+            every label/.append style={whitebg},
+            every pin/.append style={whitebg}},
         thin border/.style={inner sep=#1, outer sep=0pt},
         thin border/.default=1pt,
         thin border nodes/.style={every node/.append style={thin border=#1}},
         thin border nodes/.default=1pt,
-        every pin edge/.style={\lt-,thin},
+        every pin edge/.style={&lt;-,thin},
         node is bbox/.style={inner sep=0pt, outer sep=0pt, line width=0pt},
         every matrix/.style={ampersand replacement=\&amp;},
         math matrix/.style={matrix of math nodes,
@@ -116,6 +115,31 @@
         point/.style={circle, fill=black, inner sep=0pt,
                       minimum size=1.5mm, anchor=center},
     }
+    \tikzset{ mid arrow/.style={-&gt;}, rmid arrow/.style={&lt;-} }
+<!-- \tikzset{
+  mid arrow/.style={
+    postaction={
+      decoration={
+        markings,
+        mark=at position #1 with {\arrow{Stealth[scale=1]}},
+      },
+      decorate
+    },
+  },
+  rmid arrow/.style={
+    postaction={
+      decoration={
+        markings,
+        mark=at position #1 with {\arrowreversed{Stealth[scale=1]}},
+      },
+      decorate
+    }
+  },
+  mid arrow/.default={0.5},
+  rmid arrow/.default={0.5},
+
+}
+   -->
 
   </latex-image-preamble>
 

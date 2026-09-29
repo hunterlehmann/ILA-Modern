@@ -264,6 +264,7 @@
         exercise-worksheet="no"
         exercise-readingquestion="no"
       />-->
+      <!-- <knowl remark="yes"/> -->
 
     <!-- The theme controls the look of the html.  Which extra attributes -->
     <!-- apply depends on the theme you choose:                           -->
@@ -283,7 +284,7 @@
     <!-- Legacy stylesheets remain available through @style, but without  -->
     <!-- the full range of configuration.  See                            -->
     <!-- https://pretextbook.org/doc/guide/html/publication-file-online.html#online-style-options -->
-      <!--<css theme="default-modern"/>-->
+      <css theme="default-modern" primary-color="#8F713D" secondary-color="#051E39"/>
 
     <!-- Search.  @variant is "textbook" (the default; the value          -->
     <!-- "default" is a synonym), "reference", or "none".  @google-cx is  -->
