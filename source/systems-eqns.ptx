@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--********************************************************************
+Copyright 2019 Dan Margalit and Joseph Rabinoff
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation.  A copy of
+the license is included in gfdl.xml.
+*********************************************************************-->
+
+<section xml:id="systems-of-eqns">
+  <title>Systems of Linear Equations</title>
+
+  <objectives>
+    <ol>
+      <li><p><p>Understand the definition of <m>\R^n</m>, and what it means to use <m>\R^n</m> to label points on a geometric object.</p></p></li>
+      <li><p><p><em>Pictures:</em> solutions of systems of linear equations, parameterized solution sets.</p></p></li>
+      <li><p><p><em>Vocabulary words:</em> <term>consistent</term>, <term>inconsistent</term>, <term>solution set</term>.</p></p></li>
+    </ol>
+  </objectives>
+
+  <introduction>
+    <p>During the first half of this textbook, we will be primarily concerned with understanding the solutions of systems of linear equations.</p>
+
+    <definition>
+      <idx><h>Linear equation</h><h>definition of</h></idx>
+      <statement>
+        <p>An equation in the unknowns <m>x,y,z,\ldots</m> is called <term>linear</term> if both sides of the equation are a sum of (constant) multiples of <m>x,y,z,\ldots</m>, plus an optional constant.</p>
+      </statement>
+    </definition>
+
+    <p>For instance,
+    <md>
+      \begin{split}
+      3x + 4y &amp;= 2z \\
+      -x - z &amp;= 100
+      \end{split}
+    </md>
+    are linear equations, but
+    <md>
+      \begin{split}
+      3x + yz &amp;= 3 \\
+      \sin(x) - \cos(y) &amp;= 2
+      \end{split}
+    </md>
+    are not.</p>
+
+    <p>We will usually move the unknowns to the left side of the equation, and move the constants to the right.
+    </p>
+
+    <p>A <term>system</term> of linear equations is a collection of several linear equations, like
+      <md number="yes" xml:id="systems-eqns-example">
+        \left\{
+        \begin{alignedat}{4}
+         x\, \amp {}\, +\, \amp {} 2y \,\amp {}+{} \amp 3z \amp {}={} \amp 6\\
+        2 x\, \amp {}\, -\, \amp {} 3y\, \amp {}+{} \amp 2z \amp {}={}\amp 14\\
+        3 x\, \amp {}\, +\, \amp {} y \,\amp {}-{} \amp z  \amp {}= {}\amp -2.\\
+        \end{alignedat}
+        \right.
+      </md>
+      <idx><h>Linear equation</h><h>system of</h><see>System of linear equations</see></idx>
+      <idx><h>System of linear equations</h><h>definition of</h></idx>
+    </p>
+
+    <definition xml:id="systems-eqns-soln-sets">
+      <title>Solution sets</title>
+      <statement>
+        <p>
+          <ul>
+            <li><p>A <term>solution</term> of a system of equations is a list of numbers <m>x, y, z, \ldots</m> that make all of the equations true simultaneously.</p></li>
+            <li><p>The <term>solution set</term> of a system of equations is the collection of all solutions.</p></li>
+            <li><p><term>Solving</term> the system means finding all solutions with formulas involving some number of parameters.</p></li>
+          </ul>
+          <idx><h>System of linear equations</h><h>solution of</h></idx>
+          <idx><h>Solution</h><see>System of linear equations</see></idx>
+          <idx><h>Solution set</h><h>definition of</h></idx>
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      A system of linear equations need not have a solution.  For example, there do not exist numbers <m>x</m> and <m>y</m> making the following two equations true simultaneously:
+      <md>
+        \syseq{x + 2y = 3 ; x + 2y = -3\rlap.}
+      </md>
+      In this case, the solution set is <em>empty</em>.  As this is a rather important property of a system of equations, it has its own name.
+    </p>
+
+    <definition>
+      <idx><h>System of linear equations</h><h>inconsistent</h></idx>
+      <idx><h>System of linear equations</h><h>consistent</h></idx>
+      <idx><h>Consistent</h><see>System of linear equations</see></idx>
+      <idx><h>Inconsistent</h><see>System of linear equations</see></idx>
+      <statement>
+        <p>A system of equations is called <term>inconsistent</term> if it has no solutions.  It is called <term>consistent</term> otherwise.</p>
+      </statement>
+    </definition>
+
+    <p>A solution of a system of equations in <m>n</m> variables is a list of <m>n</m> numbers.  For example, <m>(x,y,z) = (1,-2,3)</m> is a solution of <xref ref="systems-eqns-example"/>.  As we will be studying solutions of systems of equations throughout this text, now is a good time to fix our notions regarding lists of numbers.</p>
+
+  </introduction>
+
+
+</section>

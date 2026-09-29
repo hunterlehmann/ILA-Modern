@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!-- we first include a file which contains the docinfo element: -->
+  <xi:include href="./docinfo.ptx" />
+
+  <book xml:id="main">
+    <title component="default">Interactive Linear Algebra</title>
+    <title component="1553">Interactive Linear Algebra [1553]</title>
+
+    <!-- Title Page, Preface, etc. -->
+    <xi:include href="./frontmatter.ptx" />
+
+    
+    <!-- Chapters -->
+    <chapter xml:id="chap-algebra">
+      <title>Systems of Linear Equations: Algebra</title>
+
+      <introduction>
+        <objectives>
+          <p>Solve a system of linear equations algebraically in parametric form.</p>
+        </objectives>
+        
+
+        <p>
+          This chapter is devoted to the algebraic study of systems of linear equations and their solutions.  We will learn a systematic way of solving equations of the form
+        <md>
+          \syseq{
+    3x_1 + 4x_2 + 10x_3 + 19x_4 - 2x_5 - 3x_6 = 141;
+    7x_1 + 2x_2 - 13x_3 - 7x_4 + 21x_5 + 8x_6 = 2567;
+    -x_1 + 9x_2 + \frac 32x_3 + x_4 + 14x_5 + 27x_6 = 26;
+    \frac 12x_1 + 4x_2 + 10x_3 + 11x_4 + 2x_5 + x_6 = -15\rlap.
+  }
+        </md>
+        </p>
+
+        <p>
+          In <xref ref="systems-of-eqns"/>, we will introduce <em>systems of linear equations</em>, the class of equations whose study forms the subject of linear algebra.  In <xref ref="row-reduction"/>, will present a procedure, called <em>row reduction</em>, for finding all solutions of a system of linear equations.  In <xref ref="parametric-form"/>, you will see hnow to express all solutions of a system of linear equations in a unique way using the <em>parametric form</em> of the general solution.
+        </p>
+      </introduction>
+
+      <xi:include href="./systems-eqns.ptx" />
+      <xi:include href="./row-reduction.ptx" />
+      <xi:include href="./parametric-form.ptx" />
+	<!--  <xi:include href="./ch2exercises.xml" /> -->
+    </chapter>
+
+
+    <!-- Include backmatter -->
+    <xi:include href="./backmatter.ptx" />
+
+  </book>
+</pretext>

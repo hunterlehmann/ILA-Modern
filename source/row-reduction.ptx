@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--********************************************************************
+Copyright 2019 Dan Margalit and Joseph Rabinoff
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation.  A copy of
+the license is included in gfdl.xml.
+*********************************************************************-->
+
+<section xml:id="row-reduction">
+  <title>Row Reduction</title>
+
+  <objectives>
+    <ol>
+      <li>Learn to replace a system of linear equations by an augmented matrix.</li>
+      <li>Learn how the elimination method corresponds to performing row operations on an augmented matrix.</li>
+      <li>Understand when a matrix is in (reduced) row echelon form.</li>
+      <li>Learn which row reduced matrices come from inconsistent linear systems.</li>
+      <li><em>Recipe:</em> the row reduction algorithm.</li>
+      <li><em>Vocabulary words:</em> <term>row operation</term>, <term>row equivalence</term>, <term>matrix</term>, <term>augmented matrix</term>, <term>pivot</term>, <term>(reduced) row echelon form</term>.</li>
+    </ol>
+  </objectives>
+
+  <introduction>
+    <p>
+      In this section, we will present an algorithm for <q>solving</q> a system of linear equations.
+    </p>
+  </introduction>
+
+</section>
