@@ -123,7 +123,7 @@
     <!-- How many levels deep the numbering of these items runs.  Values -->
     <!-- may not exceed the divisions @level above.  Defaults depend on  -->
     <!-- the type of document.                                           -->
-      <!-- <blocks level="0" /> -->
+      <blocks level="2" />
       <!--<equations level="2" />-->
       <!--<footnotes level="2" />-->
 
@@ -284,8 +284,7 @@
     <!-- Legacy stylesheets remain available through @style, but without  -->
     <!-- the full range of configuration.  See                            -->
     <!-- https://pretextbook.org/doc/guide/html/publication-file-online.html#online-style-options -->
-      <css theme="default-modern" primary-color="#8F713D" secondary-color="#051E39"/>
-
+      <css theme="default-modern" primary-color="#8F713D" secondary-color="#051E39" primary-color-dark="#B39051"/>
     <!-- Search.  @variant is "textbook" (the default; the value          -->
     <!-- "default" is a synonym), "reference", or "none".  @google-cx is  -->
     <!-- a Google cx number, and setting it adds a Google search box.  If -->

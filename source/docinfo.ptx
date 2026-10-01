@@ -37,13 +37,13 @@
 \newcommand{\dist}{\operatorname{dist}}
 \newcommand{\refl}{\operatorname{ref}}
 \newcommand{\inv}{^{-1}}
-\let\To=\longrightarrow
+\newcommand{\To}{\longrightarrow}
 \newcommand{\rref}{\;\xrightarrow{\text{RREF}}\;}
 \newcommand{\matrow}[1]{\text{---}\,#1\,\text{---}}
 \newcommand{\vol}{\operatorname{vol}}
 \newcommand{\sptxt}[1]{\quad\text{ #1 }\quad}
-\let\bar=\overline
-\let\hat=\widehat 
+\renewcommand{\bar}[1]{\overline{#1}}
+\renewcommand{\hat}[1]{\widehat{#1}}
 
 \newcommand{\cB}{{\mathcal B}}
 
@@ -88,6 +88,7 @@
 \usetikzlibrary{decorations.markings}
 \usetikzlibrary{calc,arrows.meta,quotes}
 \usetikzlibrary{angles}
+\usetikzlibrary{quotes}
 \usetikzlibrary{datavisualization.formats.functions}
 \usetikzlibrary{math}
 \tikzset{ grid lines/.style={ step=1, draw=gray!40, very thin } }
@@ -115,31 +116,10 @@
         point/.style={circle, fill=black, inner sep=0pt,
                       minimum size=1.5mm, anchor=center},
     }
-    \tikzset{ mid arrow/.style={-&gt;}, rmid arrow/.style={&lt;-} }
-<!-- \tikzset{
-  mid arrow/.style={
-    postaction={
-      decoration={
-        markings,
-        mark=at position #1 with {\arrow{Stealth[scale=1]}},
-      },
-      decorate
-    },
-  },
-  rmid arrow/.style={
-    postaction={
-      decoration={
-        markings,
-        mark=at position #1 with {\arrowreversed{Stealth[scale=1]}},
-      },
-      decorate
-    }
-  },
-  mid arrow/.default={0.5},
-  rmid arrow/.default={0.5},
+    \tikzset{ mid arrow/.style={ postaction={ decorate, decoration={ markings, mark=at position #1 with {\arrow{Stealth}} } } }, mid arrow/.default={0.5} }
+    \tikzset{ rmid arrow/.style={ postaction={ decorate, decoration={ markings, mark=at position #1 with {\arrowreversed{Stealth}} } } }, rmid arrow/.default={0.5} }
 
-}
-   -->
+  
 
   </latex-image-preamble>
 
