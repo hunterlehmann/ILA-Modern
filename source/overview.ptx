@@ -353,6 +353,7 @@ the license is included in gfdl.xml.
                 This turns out to be an eigenvalue problem.
             </p>
 
+            
             <figure>
                 <caption>
                     Left: the population of rabbits in a given year.
@@ -363,7 +364,8 @@ the license is included in gfdl.xml.
                     ratios?
                     This phenomenon turns out to be due to eigenvectors.
                 </caption>
-                <mathbox source="demos/rabbits.html" height="300px"/>
+                <!-- <mathbox source="demos/rabbits.html" height="300px"/> -->
+                 <!-- <interactive xml:id="interactive-rabbits" iframe="iframe/rabbits.html" width="95%" aspect="1:1"/> -->
             </figure>
         </observation>
         <observation>
@@ -564,7 +566,93 @@ the license is included in gfdl.xml.
                 Click and drag the points on the grid on the right.
             </caption>
             <mathbox source="demos/bestfit-implicit.html?func=x^2+A*y^2+B*x*y+C*x+D*y+EE&amp;v1=0,2&amp;v2=2,1&amp;v3=1,-1&amp;v4=-1,-2&amp;v5=-3,1&amp;v6=-1,1&amp;range=5&amp;rangez=25&amp;camera1=-2.14,.814,1.69" height="500px"/>
+          
         </figure>
+            <figure xml:id="fig-bestfit-implicit">
+  <caption>The implicit equation <m>x^2 + Ay^2 + Bxy + Cx + Dy + E = 0</m> of best fit
+    for six data points, found by least squares.</caption>
+  <interactive xml:id="int-bestfit-implicit" platform="geogebra" width="100%" aspect="2:1"
+               preview="images/bestfit-implicit.png">
+    <!-- perspective="GT" = Graphics (2D) + 3D Graphics side by side; verify the attribute name for your PreTeXt version -->
+    <slate xml:id="slate-bestfit-implicit" surface="geogebra" aspect="2:1" perspective="GT"
+           reset-icon="yes" shift-drag-zoom="yes">
+      evalCommand("ZoomIn(-5, -5, 5, 5)")
+      evalCommand("ZoomIn(-5, -5, -25, 5, 5, 25)")
+      evalCommand("ShowAxes(1, true)")
+      evalCommand("ShowGrid(1, true)")
+      evalCommand("ShowAxes(3, false)")
+      evalCommand("ShowGrid(3, true)")
+      evalCommand("P_1 = (0, 2)")
+      evalCommand("P_2 = (2, 1)")
+      evalCommand("P_3 = (1, -1)")
+      evalCommand("P_4 = (-1, -2)")
+      evalCommand("P_5 = (-3, 1)")
+      evalCommand("P_6 = (-1, 1)")
+      evalCommand("L = {P_1, P_2, P_3, P_4, P_5, P_6}")
+      evalCommand("M = Zip({y(Q)^2, x(Q) y(Q), x(Q), y(Q), 1}, Q, L)")
+      evalCommand("bv = Zip({-x(Q)^2}, Q, L)")
+      evalCommand("coef = Invert(Transpose(M) * M) * Transpose(M) * bv")
+      evalCommand("kA = Element(coef, 1, 1)")
+      evalCommand("kB = Element(coef, 2, 1)")
+      evalCommand("kC = Element(coef, 3, 1)")
+      evalCommand("kD = Element(coef, 4, 1)")
+      evalCommand("kE = Element(coef, 5, 1)")
+      evalCommand("f(x, y) = x^2 + kA y^2 + kB x y + kC x + kD y + kE")
+      evalCommand("zeroSet: x^2 + kA y^2 + kB x y + kC x + kD y + kE = 0")
+      evalCommand("res = Zip(f(x(Q), y(Q)), Q, L)")
+      evalCommand("S = Sum(Zip(r^2, r, res))")
+      evalCommand("errLines = Zip(Segment((x(Q), y(Q), 0), (x(Q), y(Q), f(x(Q), y(Q)))), Q, L)")
+      evalCommand('eqText = Text("Best-fit equation:  0 = x²" + If(kA &lt; 0, " − ", " + ") + abs(kA) + " y²" + If(kB &lt; 0, " − ", " + ") + abs(kB) + " xy" + If(kC &lt; 0, " − ", " + ") + abs(kC) + " x" + If(kD &lt; 0, " − ", " + ") + abs(kD) + " y" + If(kE &lt; 0, " − ", " + ") + abs(kE), Corner(4) + (0.2, -0.6))')
+      evalCommand('sumText = Text("Quantity minimized:  " + S + " = " + Sum(Sequence(If(k &gt; 1, " + ", "") + abs(Element(res, k)) + "²", k, 1, Length(res))), Corner(4) + (0.2, -1.2))')
+      evalCommand("SetVisibleInView(f, 1, false)")
+      evalCommand("SetVisibleInView(errLines, 1, false)")
+      evalCommand("SetVisibleInView(eqText, -1, false)")
+      evalCommand("SetVisibleInView(sumText, -1, false)")
+      setVisible("L", false)
+      setColor("P_1", 0, 102, 204)
+      setColor("P_2", 0, 102, 204)
+      setColor("P_3", 0, 102, 204)
+      setColor("P_4", 0, 102, 204)
+      setColor("P_5", 0, 102, 204)
+      setColor("P_6", 0, 102, 204)
+      setLabelVisible("P_1", false)
+      setLabelVisible("P_2", false)
+      setLabelVisible("P_3", false)
+      setLabelVisible("P_4", false)
+      setLabelVisible("P_5", false)
+      setLabelVisible("P_6", false)
+      setPointSize("P_1", 5)
+      setPointSize("P_2", 5)
+      setPointSize("P_3", 5)
+      setPointSize("P_4", 5)
+      setPointSize("P_5", 5)
+      setPointSize("P_6", 5)
+      setColor("f", 204, 0, 0)
+      setFilling("f", 0.7)
+      setLabelVisible("f", false)
+      setColor("zeroSet", 204, 0, 0)
+      setLineThickness("zeroSet", 6)
+      setLabelVisible("zeroSet", false)
+      setColor("errLines", 136, 0, 170)
+      setLineThickness("errLines", 6)
+      setLabelVisible("errLines", false)
+      setColor("eqText", 204, 0, 0)
+      setColor("sumText", 136, 0, 170)
+      setFixed("eqText", true, false)
+      setFixed("sumText", true, false)
+    </slate>
+    <instructions>
+      <p>Drag the blue points in the left-hand (2D) view.
+        The red curve is the zero set of the best-fit function
+        <m>f(x,y) = x^2 + Ay^2 + Bxy + Cx + Dy + E</m>,
+        and the text shows its coefficients and the quantity minimized,
+        <m>\sum_i f(x_i,y_i)^2</m>.</p>
+      <p>The right-hand (3D) view shows the graph <m>z = f(x,y)</m> in red;
+        the violet segments are the errors <m>f(x_i,y_i)</m> at the data points.
+        Drag the background of the 3D view to rotate it.</p>
+    </instructions>
+  </interactive>
+</figure>
         <!-- TODO: exercises, when ready -->
     </paragraphs>
 

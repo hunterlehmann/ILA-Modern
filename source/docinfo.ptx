@@ -19,41 +19,39 @@
   <!-- to define these semantically, so that the macro relates to what-->
   <!-- it defines. -->
   <macros>
-\newcommand{\R}{\mathbf R}
-\newcommand{\C}{\mathbf C}
-\renewcommand{\mathbb}[1]{\mathbf{#1}}
-
-\newcommand{\Span}{\operatorname{Span}}
-\newcommand{\Nul}{\operatorname{Nul}}
-\newcommand{\Col}{\operatorname{Col}}
-\newcommand{\Row}{\operatorname{Row}}
-\newcommand{\rank}{\operatorname{rank}}
-\newcommand{\nullity}{\operatorname{nullity}}
-\newcommand{\Id}{\operatorname{Id}}
-\newcommand{\Tr}{\operatorname{Tr}}
-\newcommand{\adj}{\operatorname{adj}}
-\renewcommand{\Re}{\operatorname{Re}}
-\renewcommand{\Im}{\operatorname{Im}}
-\newcommand{\dist}{\operatorname{dist}}
-\newcommand{\refl}{\operatorname{ref}}
-\newcommand{\inv}{^{-1}}
-\newcommand{\To}{\longrightarrow}
-\newcommand{\rref}{\;\xrightarrow{\text{RREF}}\;}
-\newcommand{\matrow}[1]{\text{---}\,#1\,\text{---}}
-\newcommand{\vol}{\operatorname{vol}}
-\newcommand{\sptxt}[1]{\quad\text{ #1 }\quad}
-\renewcommand{\bar}[1]{\overline{#1}}
-\renewcommand{\hat}[1]{\widehat{#1}}
-
-\newcommand{\cB}{{\mathcal B}}
-
-\newcommand{\leading}[1]{\color{red}#1}
-\newcommand{\setof}[1]{\left\{#1\right\}}
-
-\newenvironment{smm}{\left(\begin{smallmatrix}}
-                    {\end{smallmatrix}\right)}
-\newcommand*\smallmat[4]%
-  {\ensuremath{\begin{smm}#1&amp;#2\\#3&amp;#4\end{smm}}}
+  \newcommand{\R}{\mathbf R}
+  \newcommand{\C}{\mathbf C}
+ \renewcommand{\mathbb}[1]{\mathbf{#1}}
+  
+  \newcommand{\Span}{\operatorname{Span}}
+  \newcommand{\Nul}{\operatorname{Nul}}
+  \newcommand{\Col}{\operatorname{Col}}
+  \newcommand{\Row}{\operatorname{Row}}
+  \newcommand{\rank}{\operatorname{rank}}
+  \newcommand{\nullity}{\operatorname{nullity}}
+  \newcommand{\Id}{\operatorname{Id}}
+  \newcommand{\Tr}{\operatorname{Tr}}
+  \newcommand{\adj}{\operatorname{adj}}
+  \renewcommand{\Re}{\operatorname{Re}}
+  \renewcommand{\Im}{\operatorname{Im}}
+  \newcommand{\dist}{\operatorname{dist}}
+  \newcommand{\refl}{\operatorname{ref}}
+  \newcommand{\inv}{^{-1}}
+  \newcommand{\To}{\longrightarrow}
+  \newcommand{\rref}{\;\xrightarrow{\text{RREF}}\;}
+  \newcommand{\vol}{\operatorname{vol}}
+  \newcommand{\sptxt}[1]{\quad\text{ #1 }\quad}
+  \renewcommand{\bar}[1]{\overline{#1}}
+  \renewcommand{\hat}[1]{\widehat{#1}}
+  
+    \newcommand{\cB}{{\mathcal B}}
+  
+  \newcommand{\leading}[1]{\color{red}#1}
+  \newcommand{\setof}[1]{\left\{#1\right\}}
+  
+  \newenvironment{smm}{\left(\begin{smallmatrix}}
+                      {\end{smallmatrix}\right)}
+\newcommand\smallmat[4]{\begin{smm}#1&amp;#2\\#3&amp;#4\end{smm}}
   </macros>
 
   <!-- If you put any latex-image elements you can include preambles -->
@@ -127,6 +125,7 @@
   <!-- <rename element="assemblage" xml:lang="en-US">Summary</rename> -->
 
 
+  <math-package latex-name="mathtools" mathjax-name="mathtools" />
   
   <math-package latex-name="color" mathjax-name="color" />
 

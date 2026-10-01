@@ -18,24 +18,26 @@
 
       <introduction>
         <objectives>
-          <p>Solve a system of linear equations algebraically in parametric form.</p>
+          <ol><li><p><alert>Primary Goal.</alert> Solve a system of linear equations algebraically in parametric form.</p></li></ol>
         </objectives>
         
 
         <p>
           This chapter is devoted to the algebraic study of systems of linear equations and their solutions.  We will learn a systematic way of solving equations of the form
         <md>
-          \syseq{
-    3x_1 + 4x_2 + 10x_3 + 19x_4 - 2x_5 - 3x_6 = 141;
-    7x_1 + 2x_2 - 13x_3 - 7x_4 + 21x_5 + 8x_6 = 2567;
-    -x_1 + 9x_2 + \frac 32x_3 + x_4 + 14x_5 + 27x_6 = 26;
-    \frac 12x_1 + 4x_2 + 10x_3 + 11x_4 + 2x_5 + x_6 = -15\rlap.
-  }
-        </md>
+\left\{
+\begin{alignedat}{7}
+  3x_1           \amp {}+{} \amp 4x_2 \amp {}+{} \amp 10x_3          \amp {}+{} \amp 19x_4 \amp {}-{} \amp 2x_5  \amp {}-{} \amp 3x_6  \amp {}={} \amp 141,  \\
+  7x_1           \amp {}+{} \amp 2x_2 \amp {}-{} \amp 13x_3          \amp {}-{} \amp 7x_4  \amp {}+{} \amp 21x_5 \amp {}+{} \amp 8x_6  \amp {}={} \amp 2567, \\
+  -x_1           \amp {}+{} \amp 9x_2 \amp {}+{} \amp t\frac{3}{2}x_3 \amp {}+{} \amp x_4   \amp {}+{} \amp 14x_5 \amp {}+{} \amp 27x_6 \amp {}={} \amp 26,   \\
+  \tfrac{1}{2}x_1 \amp {}+{} \amp 4x_2 \amp {}+{} \amp 10x_3          \amp {}+{} \amp 11x_4 \amp {}+{} \amp 2x_5  \amp {}+{} \amp x_6   \amp {}={} \amp -15.
+\end{alignedat}
+\right.
+</md>
         </p>
 
         <p>
-          In <xref ref="systems-of-eqns"/>, we will introduce <em>systems of linear equations</em>, the class of equations whose study forms the subject of linear algebra.  In <xref ref="row-reduction"/>, will present a procedure, called <em>row reduction</em>, for finding all solutions of a system of linear equations.  In <xref ref="parametric-form"/>, you will see hnow to express all solutions of a system of linear equations in a unique way using the <em>parametric form</em> of the general solution.
+          In <xref ref="systems-of-eqns" text="type-global"/>, we will introduce <em>systems of linear equations</em>, the class of equations whose study forms the subject of linear algebra.  In <xref ref="row-reduction" text="type-global"/>, will present a procedure, called <em>row reduction</em>, for finding all solutions of a system of linear equations.  In <xref ref="parametric-form" text="type-global"/>, you will see hnow to express all solutions of a system of linear equations in a unique way using the <em>parametric form</em> of the general solution.
         </p>
       </introduction>
 
