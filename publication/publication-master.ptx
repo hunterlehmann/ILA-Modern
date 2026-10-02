@@ -220,7 +220,8 @@
   <!--   that copies an iframe snippet for your website or LMS.         -->
   <!-- @design-width is an integer, default 600, used as the base when  -->
   <!--   a percentage width for an interactive must become pixels.      -->
-  <html>
+  <html favicon="simple">
+    <brandlogo source="images/logo.gif" url="https://gatech.edu/" />
   <!-- Replace the <html> tag above with the one below to try these-->
   <!--
     <html

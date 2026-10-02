@@ -52,12 +52,6 @@
   \newenvironment{smm}{\left(\begin{smallmatrix}}
                       {\end{smallmatrix}\right)}
 \newcommand\smallmat[4]{\begin{smm}#1&amp;#2\\#3&amp;#4\end{smm}}
-  </macros>
-
-  <!-- If you put any latex-image elements you can include preambles -->
-  <!-- for those in the next element. -->
-  <latex-image-preamble>
-    \usepackage{xcolor}
 
 \definecolor{seq-red}{rgb}{0.8941,0.1020,0.1098}
 \definecolor{seq-blue}{rgb}{0.2157,0.4941,0.7216}
@@ -67,6 +61,13 @@
 \definecolor{seq-yellow}{rgb}{0.7000,0.7000,0.0000}
 \definecolor{seq-brown}{rgb}{0.6510,0.3373,0.1569}
 \definecolor{seq-pink}{rgb}{0.9686,0.5059,0.7490}
+  </macros>
+
+  <!-- If you put any latex-image elements you can include preambles -->
+  <!-- for those in the next element. -->
+  <latex-image-preamble>
+    \usepackage{xcolor}
+
 
 \definecolor{seq1}{rgb}{0.8941,0.1020,0.1098}
 \definecolor{seq2}{rgb}{0.2157,0.4941,0.7216}
@@ -116,9 +117,118 @@
     }
     \tikzset{ mid arrow/.style={ postaction={ decorate, decoration={ markings, mark=at position #1 with {\arrow{Stealth}} } } }, mid arrow/.default={0.5} }
     \tikzset{ rmid arrow/.style={ postaction={ decorate, decoration={ markings, mark=at position #1 with {\arrowreversed{Stealth}} } } }, rmid arrow/.default={0.5} }
-
+    \makeatletter
+% \point is shorthand for \node[point], except it doesn't need an empty {} at
+% the end, and it allows for overlay specifications.  Usage:
+%   \point&lt;3-> [red] (A) at (1,2);
+\def\point#1;{\@ifnextchar&lt;{\point@overlay}{\point@nooverlay}#1;}
+\def\point@overlay&lt;#1>#2;{\point@{#2}{&lt;#1>}}
+\def\point@nooverlay#1;{\point@{#1}{}}
+\def\point@#1#2{\node#2[point]#1{};}
+\makeatother
   
+    \makeatletter
+    
+\tikzset{
+  % Figure out the angle of the line; use this to place the node's anchor.
+  calc to line angle/.code={%
+    \bgroup%
+    % This is just to convert the TikZ coordinates \tikztostart and \tikztoend
+    % (the latter of which might be a node name or something) to PGF points.
+    \def\savea##1{\def\pgf@tempa{##1}}%
+    \def\saveb##1{\def\pgf@tempb{##1}}%
+    \tikz@scan@one@point\savea(\tikztostart)\relax%
+    \tikz@scan@one@point\saveb(\tikztotarget)\relax%
+    \pgfmathanglebetweenpoints{\pgf@tempb}{\pgf@tempa}%
+    \pgfmathtruncatemacro{\to@lineangle}{\pgfmathresult}%
+    \xdef\to@lineangle{\to@lineangle}%
+    \egroup%
+  },
+  after line/.style={
+    pos=, % disable automatically setting pos
+    at={($(\tikztostart)!#1!(\tikztotarget)+(\tikztotarget)-(\tikztostart)$)},
+    calc to line angle,
+    anchor=\to@lineangle
+  },
+  after line/.default=1mm,
+  before line/.style={
+    pos=, % disable automatically setting pos
+    at={($(\tikztotarget)!#1!(\tikztostart)+(\tikztostart)-(\tikztotarget)$)},
+    calc to line angle,
+    anchor=\to@lineangle+180
+  },
+  before line/.default=1mm,
+}
+\makeatother
 
+
+%----------------------------------------------------------------------
+%-- 3D coordinate transforms
+%----------------------------------------------------------------------
+\makeatletter
+
+\tikzset{
+  % myxyz defines the (projection of the) locations of the unit coordinate
+  % vectors.
+  myxyz/.style={y={(1cm,0cm)}, x={(-.8cm,-.5cm)}, z={(0cm,1cm)}},
+  resetxy/.style={x={(1cm,0cm)}, y={(0cm,1cm)}}
+}
+
+% Apply coordinate transformation so that (1cm,0cm) is mapped to
+% (xyz cs:x=1,y=0,z=#1) and (0cm,1cm) is mapped to (xyz cs:x=0,y=1,z=#1)
+\newcommand\transformxy[1][0]{%
+    \pgfpointxyz100%
+    \pgfmathsetmacro\xx{\pgf@x/1cm}\pgfmathsetmacro\xy{\pgf@y/1cm}%
+    \pgfpointxyz010%
+    \pgfmathsetmacro\yx{\pgf@x/1cm}\pgfmathsetmacro\yy{\pgf@y/1cm}%
+    \pgftransformcm\xx\xy\yx\yy{\pgfpointxyz00{#1}}%
+}
+
+% Apply coordinate transformation so that (1cm,0cm) is mapped to
+% (xyz cs:x=1,y=#1,z=0) and (0cm,1cm) is mapped to (xyz cs:x=0,y=#1,z=1)
+\newcommand\transformxz[1][0]{%
+    \pgfpointxyz100%
+    \pgfmathsetmacro\xx{\pgf@x/1cm}\pgfmathsetmacro\xy{\pgf@y/1cm}%
+    \pgfpointxyz001%
+    \pgfmathsetmacro\yx{\pgf@x/1cm}\pgfmathsetmacro\yy{\pgf@y/1cm}%
+    \pgftransformcm\xx\xy\yx\yy{\pgfpointxyz0{#1}0}%
+}
+
+% Apply coordinate transformation so that (1cm,0cm) is mapped to
+% (xyz cs:x=#1,y=1,z=0) and (0cm,1cm) is mapped to (xyz cs:x=#1,y=0,z=1)
+\newcommand\transformyz[1][0]{%
+    \pgfpointxyz010%
+    \pgfmathsetmacro\xx{\pgf@x/1cm}\pgfmathsetmacro\xy{\pgf@y/1cm}%
+    \pgfpointxyz001%
+    \pgfmathsetmacro\yx{\pgf@x/1cm}\pgfmathsetmacro\yy{\pgf@y/1cm}%
+    \pgftransformcm\xx\xy\yx\yy{\pgfpointxyz{#1}00}%
+}
+
+\tikzset{
+    transformxy only/.code={\transformxy[#1]},
+    transformxy only/.default=0,
+    transformxz only/.code={\transformxz[#1]},
+    transformxz only/.default=0,
+    transformyz only/.code={\transformyz[#1]},
+    transformyz only/.default=0,
+    transformxy/.style={transformxy only=#1, resetxy},
+    transformxy/.default=0,
+    transformxz/.style={transformxz only=#1, resetxy},
+    transformxz/.default=0,
+    transformyz/.style={transformyz only=#1, resetxy},
+    transformyz/.default=0
+}
+
+
+% Project onto coordinate planes
+\def\projxy@(#1,#2,#3){(#1,#2,0)}
+\def\projxy{\expandafter\projxy@}
+\def\projxz@(#1,#2,#3){(#1,0,#3)}
+\def\projxz{\expandafter\projxz@}
+\def\projyz@(#1,#2,#3){(0,#2,#3)}
+\def\projyz{\expandafter\projyz@}
+
+\makeatother
   </latex-image-preamble>
 
   <!-- It is possible to rename elements: -->

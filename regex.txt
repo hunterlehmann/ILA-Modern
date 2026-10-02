@@ -1,0 +1,4 @@
+Regex Tikzpictures
+
+<latex-code>([\s\S\n]*?)</latex-code>
+<image>\n<shortdescription>\n\n</shortdescription>\n<latex-image>$1</latex-image>\n</image>
