@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="_static/pretext/fonts/material-symbols-outlined.css">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+lang: "en-US",
+});
+</script><script defer data-pretext-mathjax="true" onerror="this.dataset.loadFailed = 'true';" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="Interactive Linear Algebra">
+<meta property="og:title" content="Interactive Linear Algebra">
+<meta property="book:title" content="Interactive Linear Algebra">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.55"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.55"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.3.3';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.dd07797f77620576.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.11d27cdc38930c2c.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.347e2ecdeacfed99.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math standalone-page">
+<a class="assistive" href="#ptx-content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{mathtools}\require{color}  \newcommand{\R}{\mathbf R}
+  \newcommand{\C}{\mathbf C}
+ \renewcommand{\mathbb}[1]{\mathbf{#1}}
+  
+  \newcommand{\Span}{\operatorname{Span}}
+  \newcommand{\Nul}{\operatorname{Nul}}
+  \newcommand{\Col}{\operatorname{Col}}
+  \newcommand{\Row}{\operatorname{Row}}
+  \newcommand{\rank}{\operatorname{rank}}
+  \newcommand{\nullity}{\operatorname{nullity}}
+  \newcommand{\Id}{\operatorname{Id}}
+  \newcommand{\Tr}{\operatorname{Tr}}
+  \newcommand{\adj}{\operatorname{adj}}
+  \renewcommand{\Re}{\operatorname{Re}}
+  \renewcommand{\Im}{\operatorname{Im}}
+  \newcommand{\dist}{\operatorname{dist}}
+  \newcommand{\refl}{\operatorname{ref}}
+  \newcommand{\inv}{^{-1}}
+  \newcommand{\To}{\longrightarrow}
+  \newcommand{\rref}{\;\xrightarrow{\text{RREF}}\;}
+  \newcommand{\vol}{\operatorname{vol}}
+  \newcommand{\sptxt}[1]{\quad\text{ #1 }\quad}
+  \renewcommand{\bar}[1]{\overline{#1}}
+  \renewcommand{\hat}[1]{\widehat{#1}}
+  
+    \newcommand{\cB}{{\mathcal B}}
+  
+  \newcommand{\leading}[1]{\color{red}#1}
+  \newcommand{\setof}[1]{\left\{#1\right\}}
+  
+  \newenvironment{smm}{\left(\begin{smallmatrix}}
+                      {\end{smallmatrix}\right)}
+\newcommand\smallmat[4]{\begin{smm}#1&amp;#2\\#3&amp;#4\end{smm}}
+
+\definecolor{seq-red}{rgb}{0.8941,0.1020,0.1098}
+\definecolor{seq-blue}{rgb}{0.2157,0.4941,0.7216}
+\definecolor{seq-green}{rgb}{0.3020,0.6863,0.2902}
+\definecolor{seq-violet}{rgb}{0.5961,0.3059,0.6392}
+\definecolor{seq-orange}{rgb}{1.0000,0.4980,0.0000}
+\definecolor{seq-yellow}{rgb}{0.7000,0.7000,0.0000}
+\definecolor{seq-brown}{rgb}{0.6510,0.3373,0.1569}
+\definecolor{seq-pink}{rgb}{0.9686,0.5059,0.7490}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href="https://gatech.edu/"><img src="external/images/logo.gif" alt="Logo image"></a><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="main.html"><span class="title">Interactive Linear Algebra</span></a></div>
+<p class="byline">Dan Margalit, Joseph Rabinoff</p>
+</div>
+</div></header><div class="ptx-page"><main class="ptx-main"><div id="ptx-content">
+<div class="interactive-iframe-container"><iframe id="int-bestfit-implicit" style="width:600px; height:300px; display: block; " src="int-bestfit-implicit-if.html"></iframe></div>
+<div class="instructions interactive__instructions">
+<details id="int-bestfit-implicit-2" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h1 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h1></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="int-bestfit-implicit-2-1">Drag the blue points in the left-hand (2D) view. The red curve is the zero set of the best-fit function <span class="process-math">\(f(x,y) = x^2 + Ay^2 + Bxy + Cx + Dy + E\text{,}\)</span> and the text shows its coefficients and the quantity minimized, <span class="process-math">\(\sum_i f(x_i,y_i)^2\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#int-bestfit-implicit-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="int-bestfit-implicit-2-2">The right-hand (3D) view shows the graph <span class="process-math">\(z = f(x,y)\)</span> in red; the violet segments are the errors <span class="process-math">\(f(x_i,y_i)\)</span> at the data points. Drag the background of the 3D view to rotate it.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#int-bestfit-implicit-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#int-bestfit-implicit-2" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+</div></main></div>
+</body>
+</html>

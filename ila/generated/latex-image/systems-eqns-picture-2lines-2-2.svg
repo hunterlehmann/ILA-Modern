@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" width="230" height="230" viewBox="0 0 230 230">
+<defs>
+<clipPath id="clip_1">
+<path transform="matrix(1.00003,0,0,-1.00002,115.38391,115.084987)" d="M-113.38405-113.38405V113.38405H113.38405V-113.38405ZM113.38405 113.38405"/>
+</clipPath>
+</defs>
+<path transform="matrix(1.00003,0,0,-1.00002,115.38391,115.084987)" stroke-width=".19926" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="#cccccc" d="M-113.38405-113.38405V113.38405H113.38405V-113.38405ZM113.38405 113.38405"/>
+<g clip-path="url(#clip_1)">
+<path transform="matrix(1.00003,0,0,-1.00002,115.38391,115.084987)" stroke-width=".39851" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="#000000" d="M-113.38405 0H112.98555"/>
+<path transform="matrix(1.00003,0,0,-1.00002,228.57212,115.084987)" stroke-width=".39851" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke="#000000" d="M-2.07222 2.39102C-1.69363 .95639-.85 .27896 0 0-.85-.27896-1.69363-.95639-2.07222-2.39102"/>
+<path transform="matrix(1.00003,0,0,-1.00002,115.38391,115.084987)" stroke-width=".39851" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="#000000" d="M0-113.38405V112.98555"/>
+<path transform="matrix(0,-1.00002,-1.00003,-0,115.38391,1.8979187)" stroke-width=".39851" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke="#000000" d="M-2.07222 2.39102C-1.69363 .95639-.85 .27896 0 0-.85-.27896-1.69363-.95639-2.07222-2.39102"/>
+<path transform="matrix(1.00003,0,0,-1.00002,115.38391,115.084987)" stroke-width=".79703" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="#984ea3" d="M-113.38405-32.12541 113.38405 43.46382"/>
+<path transform="matrix(1.00003,0,0,-1.00002,115.38391,115.084987)" stroke-width=".79703" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="#4daf4a" d="M-113.38405 272.12174 113.38405-181.41448"/>
+<path transform="matrix(1.00003,0,0,-1.00002,115.38391,115.084987)" d="M19.13358 11.33841C19.13358 12.51256 18.18176 13.46437 17.00761 13.46437 15.83345 13.46437 14.88164 12.51256 14.88164 11.33841 14.88164 10.16426 15.83345 9.21243 17.00761 9.21243 18.18176 9.21243 19.13358 10.16426 19.13358 11.33841ZM17.00761 11.33841"/>
+</g>
+</svg>
