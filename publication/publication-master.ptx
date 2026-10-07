@@ -123,7 +123,7 @@
     <!-- How many levels deep the numbering of these items runs.  Values -->
     <!-- may not exceed the divisions @level above.  Defaults depend on  -->
     <!-- the type of document.                                           -->
-      <blocks level="2" />
+      <blocks level="1" />
       <!--<equations level="2" />-->
       <!--<footnotes level="2" />-->
 
