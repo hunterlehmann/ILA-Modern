@@ -285,7 +285,8 @@
     <!-- Legacy stylesheets remain available through @style, but without  -->
     <!-- the full range of configuration.  See                            -->
     <!-- https://pretextbook.org/doc/guide/html/publication-file-online.html#online-style-options -->
-      <css theme="default-modern" primary-color="#8F713D" secondary-color="#051E39" primary-color-dark="#B39051"/>
+      <css theme="default-modern" primary-color="#8F713D" secondary-color="#051E39" primary-color-dark="#B39051"  />
+    
     <!-- Search.  @variant is "textbook" (the default; the value          -->
     <!-- "default" is a synonym), "reference", or "none".  @google-cx is  -->
     <!-- a Google cx number, and setting it adds a Google search box.  If -->

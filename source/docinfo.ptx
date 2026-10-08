@@ -11,6 +11,8 @@
 
   <directories external="../assets" />
   <rename element="observation">Example</rename>
+  <rename element="question">Interactive</rename>
+  <rename element="convention">Primary Goal</rename>
   <defaults>
     <xrefs text="phrase-hybrid" />
   </defaults>
@@ -19,6 +21,8 @@
   <!-- to define these semantically, so that the macro relates to what-->
   <!-- it defines. -->
   <macros>
+    \definecolor{highlight}{RGB}{168, 101, 0}
+    \renewcommand{\r}{\color{highlight}}
   \newcommand{\R}{\mathbf R}
   \newcommand{\C}{\mathbf C}
  \renewcommand{\mathbb}[1]{\mathbf{#1}}
@@ -68,6 +72,7 @@
   <latex-image-preamble>
     \usepackage{xcolor}
 
+    \definecolor{contrastBlue}{HTML}{5E56FB}
 
 \definecolor{seq1}{rgb}{0.8941,0.1020,0.1098}
 \definecolor{seq2}{rgb}{0.2157,0.4941,0.7216}
@@ -77,6 +82,8 @@
 \definecolor{seq6}{rgb}{0.7000,0.7000,0.0000}
 \definecolor{seq7}{rgb}{0.6510,0.3373,0.1569}
 \definecolor{seq8}{rgb}{0.9686,0.5059,0.7490}
+\definecolor{light gray}{HTML}{BBBBBB}
+\definecolor{steel}{HTML}{646D7E}
 
    \usepackage{tikz}
 \usetikzlibrary{backgrounds}
@@ -87,10 +94,8 @@
 \usetikzlibrary{decorations.markings}
 \usetikzlibrary{calc,arrows.meta,quotes}
 \usetikzlibrary{angles}
-\usetikzlibrary{quotes}
 \usetikzlibrary{datavisualization.formats.functions}
 \usetikzlibrary{math}
-\tikzset{ grid lines/.style={ step=1, draw=gray!40, very thin } }
 \tikzset{
         whitebg/.style={fill=white},
         whitebg nodes/.style={every node/.append style={whitebg},
@@ -229,6 +234,33 @@
 \def\projyz{\expandafter\projyz@}
 
 \makeatother
+
+\tikzset{
+  % right angle
+  pics/right angle/.style args={#1--#2--#3} {
+    code = {
+      \path[pic actions, very thin]
+        let \p1=($#2!\rightanglelen!#1$), \p2=($#2!\rightanglelen!#3$) in
+          (\p1) -- ($(\p1) + (\p2) - #2$) -- (\p2);
+    }
+  },
+  right angle len/.store in=\rightanglelen,
+  right angle len=2mm,
+}
+\tikzset{
+  % Set styles for all kinds of nodes at once
+  all nodes/.style={
+    every node/.style={#1},
+    every label/.style={every node},
+    every pin/.style={every node}
+  },
+  %
+  shorten/.style={shorten &gt;=#1, shorten &lt;=#1},
+  grid lines/.style={help lines, black!30},
+}
+
+  \newif\ifpdfvers
+\pdfversfalse
   </latex-image-preamble>
 
   <!-- It is possible to rename elements: -->

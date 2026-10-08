@@ -5,8 +5,8 @@
 <!-- This file, the project manifest, provides the overall configuration for your PreTeXt project. To edit the content of your document, open `source/main.ptx`. See https://pretextbook.org/doc/guide/html/processing-CLI.html#cli-project-manifest. -->
 <project ptx-version="2">
   <targets>
-    <target name="master-web" format="html" publication="publication-master.ptx" output-dir="master-web" deploy-dir="ila"><stringparams author.tools="yes" /></target>
-    <target name="1553-web" format="html" publication="publication-1553.ptx" output-dir="1553-web" deploy-dir="ila/1553" />
+    <target name="master-web" format="html" publication="publication-master.ptx" output-dir="master-web" >  </target>
+    <target name="1553-web" format="html" publication="publication-1553.ptx" output-dir="1553-web" deploy-dir="1553" />
     <target name="print" format="pdf" />
   </targets>
 </project>
