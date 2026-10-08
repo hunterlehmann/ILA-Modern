@@ -181,7 +181,7 @@ x \amp {}+{} \amp 2y \amp {}+{} \amp 3z \amp {}={} \amp 6 \amp {} \\
 \end{array}\right)</mrow>
 </md>
       Here the notation <m>R_1</m> simply means <q>the first row</q>, and likewise for <m>R_2,R_3,</m> etc.
-      <notation><usage>R_i</usage><description>Row <m>i</m> of a matrix</description></notation>
+      <notation><usage><m>R_i</m></usage><description>Row <m>i</m> of a matrix</description></notation>
       </li>
       <li><alert>Replacement:</alert> add a multiple of one row to another, replacing the second row with the result.
       <idx><h>Row operations</h><h>replacement</h></idx>
@@ -219,9 +219,9 @@ x \amp {}+{} \amp 2y \amp {}+{} \amp 3z \amp {}={} \amp 6 \amp {} \\
     </ul>
     </p>
 
-            <remark>
+            <problem>
       <p>When we wrote our row operations above we used expressions like <m>R_2 = R_2 - 2 \times R_1</m>.  Of course this does not mean that the second row is equal to the second row minus twice the first row.  Instead it means that we are <em>replacing</em> the second row with the second row minus twice the first row.  This kind of syntax is used frequently in computer programming when we want to change the value of a variable.</p>
-    </remark>
+    </problem>
 
 
 
@@ -415,7 +415,7 @@ x \amp {}+{} \amp y \amp {}={} \amp 2 \amp {} \\
   <subsection xml:id="row-reduction-echelon-forms">
     <title>Echelon Forms</title>
 
-    <p>In the previous <xref ref="row-reduction-elimination"/> we saw how to translate a system of linear equations into an augmented matrix.  We want to find an <em>algorithm</em> for <q>solving</q> such an augmented matrix.  First we must decide what it means for an augmented matrix to be <q>solved</q>.</p>
+    <p>In the previous <xref ref="row-reduction-elimination" text="type-global"/> we saw how to translate a system of linear equations into an augmented matrix.  We want to find an <em>algorithm</em> for <q>solving</q> such an augmented matrix.  First we must decide what it means for an augmented matrix to be <q>solved</q>.</p>
 
     <definition>
       <idx><h>Row echelon form</h></idx>
@@ -467,14 +467,14 @@ x \amp {}+{} \amp 2y \amp {}+{} \amp 3z \amp {}={} \amp 6 \amp {} \\
 {} \amp {} \amp {} \amp {} \amp 10z \amp {}={} \amp 30. \amp {}
 \end{alignedat}\right.</mrow>
 </md>
-        We immediately see that <m>z=3</m>, which implies <m>y = 4-2\cdot 3 = -2</m> and <m>x = 6 - 2(-2) - 3\cdot 3 = 1.</m>  See this <xref ref="systems-eqns-example1b"/>.
+        We immediately see that <m>z=3</m>, which implies <m>y = 4-2\cdot 3 = -2</m> and <m>x = 6 - 2(-2) - 3\cdot 3 = 1.</m>  See <xref ref="systems-eqns-example1b"/>.
     </p>
 
     <definition>
       <idx><h>Reduced row echelon form</h></idx>
       <statement>
         <p>A matrix is in <term>reduced row echelon form</term> if it is in row echelon form, and in addition:
-        <ol start="4">
+        <ol>
           <li><p>Each pivot is equal to 1.</p></li>
           <li><p>Each pivot is the only nonzero entry in its column.</p></li>
         </ol>
@@ -584,7 +584,7 @@ z \amp {}={} \amp 3. \amp {}
 
     <p>If an augmented matrix is in reduced row echelon form, the corresponding linear system is viewed as <em>solved</em>.  We will see below why this is the case, and we will show that any matrix can be put into reduced row echelon form using only row operations.</p>
 
-    <remark>
+    <problem>
 	<title>Why the word <q>pivot</q>?</title>
       <p>Consider the following system of equations:
         <md>
@@ -646,7 +646,7 @@ x \amp {}-{} \amp y \amp {}={} \amp 0 \amp {} \\
 <p>
 	What has happened geometrically is that the original blue line has been replaced with the new blue line <m>y=1</m>.  We can think of the blue line as rotating, or pivoting, around the solution <m>(1,1)</m>.  We used the pivot position in the matrix in order to make the blue line pivot like this.  This is one possible explanation for the terminology <q>pivot</q>.
 </p>
-    </remark>
+    </problem>
 
 
 
@@ -1087,7 +1087,7 @@ x \amp {} \amp {} \amp {} \amp {} \amp {}={} \amp 1 \amp {} \\
       </p>
       </statement>
       <solution>
-        <p>We saw in this <xref ref="row-reduction-eg1"/> that a row echelon form of the matrix is
+        <p>We saw in <xref ref="row-reduction-eg1"/> that a row echelon form of the matrix is
         <md>
 <mrow>\left(\begin{array}{rrr|r}
 1 \amp 2 \amp 3 \amp 6 \\
@@ -1225,7 +1225,7 @@ x \amp {}+{} \amp 5y \amp {}={} \amp 0 \amp {} \\
 </md>
         </li>
       </ol>
-      What happens when one of the non-augmented columns lacks a pivot?  This is the subject of <xref ref="parametric-form"/>.
+      What happens when one of the non-augmented columns lacks a pivot?  This is the subject of <xref ref="parametric-form" text="type-global"/>.
     </p>
 
     <example>
@@ -1288,7 +1288,7 @@ x \amp {}+{} \amp 5z \amp {}={} \amp 1 \amp {} \\
 y \amp {}+{} \amp 2z \amp {}={} \amp -1. \amp {}
 \end{alignedat}\right.</mrow>
 </md>
-          In what sense is the system solved?  We will see in <xref ref="parametric-form"/>.
+          In what sense is the system solved?  We will see in <xref text="type-global" ref="parametric-form"/>.
         </p>
       </solution>
     </example>

@@ -12,6 +12,7 @@
   <directories external="../assets" />
   <rename element="observation">Example</rename>
   <rename element="question">Interactive</rename>
+  <rename element="problem">Remark</rename>
   <rename element="convention">Primary Goal</rename>
   <defaults>
     <xrefs text="phrase-hybrid" />

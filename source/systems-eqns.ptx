@@ -419,11 +419,11 @@ the license is included in gfdl.xml.
       </statement>
     </definition>
 
-    <remark>
+    <problem>
       <p>
         The equation <m>x+y+z+w=1</m> defines a <q><m>3</m>-plane</q> in <m>4</m>-space, and more generally, a single linear equation in <m>n</m> variables defines an <q><m>(n-1)</m>-plane</q> in <m>n</m>-space.  We will make these statements precise in <xref provisional="dimension"/>.
       </p>
-    </remark>
+    </problem>
 
     <observation xml:id="systems-eqns-picture-2lines">
       <title>Two Equations in Two Variables</title>
@@ -553,11 +553,11 @@ Two lines in the plane that are equal
       </figure>
     </observation>
 
-    <remark>
+    <problem>
       <p>
         In general, the solutions of a system of equations in <m>n</m> variables is the intersection of <q><m>(n-1)</m>-planes</q> in <m>n</m>-space.  This is always some kind of linear space, as we will discuss in <xref provisional="solution-sets"/>.
       </p>
-    </remark>
+    </problem>
 
   </subsection>
 </section>
