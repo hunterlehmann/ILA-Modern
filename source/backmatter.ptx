@@ -17,6 +17,7 @@
     <notation-list/> 
   </appendix>
 
+  <xi:include href="./gfdl.ptx"/>
   <index> <title>Index</title> <index-list/> </index>
 
   <colophon>

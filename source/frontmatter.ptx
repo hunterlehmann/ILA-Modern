@@ -125,6 +125,39 @@
 
   </preface>
 
+  <preface>
+    <title>History of the Updated Edition</title>
+    
+    <p>
+      <ul>
+        <li>
+          <p>
+            The Georgia Tech/Duke edition, entitled <q>Interactive Linear Algebra</q> was published in 2019, by Dan Margalit and Joseph Rabinoff, with contributions from Larry Rolen.
+          </p>
+        </li>
+        <li>
+          <p>
+            This updated edition, entitled <q>Interactive Linear Algebra: Updated Edition</q>, was published in 2026, with updates and modifications by Chris Jankowski and Hunter Lehmann.
+          </p>
+          <p>
+            <ul>
+              <li>
+                <p>
+                  Hunter Lehmann updated the technical aspects of the project from the original customized MathBookXML by Rabinoff to modern <pretext/> and improved digital accessibility of the text.  
+                </p>
+              </li>
+              <li>
+                <p>
+                  Chris Jankowski contributed exercises for student practice.
+                </p>
+              </li>
+            </ul>
+          </p>
+        </li>
+      </ul>
+    </p>
+
+  </preface>
   
   <xi:include href="./overview.ptx" />
 </frontmatter>

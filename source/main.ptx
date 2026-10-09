@@ -5,8 +5,8 @@
   <xi:include href="./docinfo.ptx" />
 
   <book xml:id="main">
-    <title component="default">Interactive Linear Algebra</title>
-    <title component="1553">Interactive Linear Algebra [1553]</title>
+    <title component="default">Interactive Linear Algebra: Updated Edition</title>
+    <title component="1553">Interactive Linear Algebra: Updated Edition [1553]</title>
 
     <!-- Title Page, Preface, etc. -->
     <xi:include href="./frontmatter.ptx" />
