@@ -618,7 +618,7 @@ x \amp {}-{} \amp y \amp {}={} \amp 0 \amp {} \\
 \end{array}\right)</mrow>
 </md>
           </p>
-<image>
+<image xml:id="img-pivot-history" width="60%">
 <shortdescription>
 <!-- FILL: Brief alt-text for this TikZ figure (linear algebra context) -->
 </shortdescription>
@@ -1095,7 +1095,7 @@ x \amp {} \amp {} \amp {} \amp {} \amp {}={} \amp 1 \amp {} \\
 0 \amp 0 \amp 10 \amp 30
 \end{array}\right).</mrow>
 </md>
-        The pivot positions of <m>A</m> are the entries that become pivots in a row echelon form; they are marked in red below:
+        The pivot positions of <m>A</m> are the entries that become pivots in a row echelon form; they are marked in color below:
         <md>
 <mrow>\left(\begin{array}{rrr|r}
 \r0 \amp -7 \amp -4 \amp 2 \\
@@ -1134,7 +1134,7 @@ x \amp {} \amp {} \amp {} \amp {} \amp {}={} \amp 1 \amp {} \\
 \color{highlight}1 \amp 5 \amp {-\frac 12} \\
 3 \amp {15} \amp 2
 \end{array}\right)
-                  \amp\amp\color{blue}\text{(Step 1b)}
+                  \,\color{contrastBlue}\text{(Step 1b)}
                 </mrow>
                 <mrow>
                   {}\quad\xrightarrow{R_2=R_2-3R_1}\quad
@@ -1142,7 +1142,7 @@ x \amp {} \amp {} \amp {} \amp {} \amp {}={} \amp 1 \amp {} \\
 1 \amp 5 \amp {-\frac 12} \\
 \color{highlight}0 \amp 0 \amp \frac72
 \end{array}\right)
-                  \amp\amp\color{blue}\text{(Step 1c)}
+                  \,\color{contrastBlue}\text{(Step 1c)}
                 </mrow>
                 <mrow>
                   {}\quad\xrightarrow{R_2=R_2\times\frac 27}\quad
@@ -1150,7 +1150,7 @@ x \amp {} \amp {} \amp {} \amp {} \amp {}={} \amp 1 \amp {} \\
 1 \amp 5 \amp {-\frac 12} \\
 0 \amp 0 \amp \color{highlight}1
 \end{array}\right)
-                  \amp\amp\color{blue}\text{(Step 2b)}
+                  \,\color{contrastBlue}\text{(Step 2b)}
                 </mrow>
                 <mrow>
                   {}\quad\xrightarrow{R_1=R_1+\frac 12R_2}\quad
@@ -1158,7 +1158,7 @@ x \amp {} \amp {} \amp {} \amp {} \amp {}={} \amp 1 \amp {} \\
 1 \amp 5 \amp \color{highlight}0 \\
 0 \amp 0 \amp 1
 \end{array}\right)
-                  \amp\amp\color{blue}\text{(Step 2c)}
+                  \,\color{contrastBlue}\text{(Step 2c)}
                 </mrow>
               </md>
               This row reduced matrix corresponds to the <em>inconsistent</em> system
@@ -1254,7 +1254,7 @@ x \amp {}+{} \amp 2y \amp {}+{} \amp 9z \amp {}={} \amp -1 \amp {}
 \color{highlight}1 \amp 2 \amp 9 \amp -1 \\
 2 \amp 1 \amp 12 \amp 1
 \end{array}\right)
-              \amp\amp\color{blue}\text{(Optional)}
+              \,\color{contrastBlue}\text{(Optional)}
             </mrow>
             <mrow>
               {}\quad\xrightarrow{R_2=R_2-2R_1}\quad
@@ -1262,7 +1262,7 @@ x \amp {}+{} \amp 2y \amp {}+{} \amp 9z \amp {}={} \amp -1 \amp {}
 1 \amp 2 \amp 9 \amp -1 \\
 \color{highlight}0 \amp -3 \amp -6 \amp 3
 \end{array}\right)
-              \amp\amp\color{blue}\text{(Step 1c)}
+              \,\color{contrastBlue}\text{(Step 1c)}
             </mrow>
             <mrow>
               {}\quad\xrightarrow{R_2=R_2\div -3}\quad
@@ -1270,7 +1270,7 @@ x \amp {}+{} \amp 2y \amp {}+{} \amp 9z \amp {}={} \amp -1 \amp {}
 1 \amp 2 \amp 9 \amp -1 \\
 0 \amp \color{highlight}1 \amp 2 \amp -1
 \end{array}\right)
-              \amp\amp\color{blue}\text{(Step 2b)}
+              \,\color{contrastBlue}\text{(Step 2b)}
             </mrow>
             <mrow>
               {}\quad\xrightarrow{R_1=R_1-2R_2}\quad
@@ -1278,7 +1278,7 @@ x \amp {}+{} \amp 2y \amp {}+{} \amp 9z \amp {}={} \amp -1 \amp {}
 1 \amp \color{highlight}0 \amp 5 \amp 1 \\
 0 \amp 1 \amp 2 \amp -1
 \end{array}\right)
-              \amp\amp\color{blue}\text{(Step 2c)}
+              \,\color{contrastBlue}\text{(Step 2c)}
             </mrow>
           </md>
           This row reduced matrix corresponds to the linear system

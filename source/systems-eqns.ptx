@@ -430,12 +430,12 @@ the license is included in gfdl.xml.
 
       <p>
         Now consider the system of two linear equations
-        <md>\def\r{\color{seq-violet}}
-\def\b{\color{seq-green}}
+        <md>
+
 \left\{
 \begin{alignedat}{3}
-\r x \amp \r{}-{} \amp \r 3y \amp \r{}={} \amp \r -3 \\
-\b 2x \amp \b{}+{} \amp \b y \amp \b{}={} \amp \b 8.
+\cp x \amp \cp{}-{} \amp \cp 3y \amp \cp{}={} \amp \cp -3 \\
+\g 2x \amp \g{}+{} \amp \g y \amp \g{}={} \amp \g 8.
 \end{alignedat}
 \right.</md>
         Each equation individually defines a line in the plane, pictured below.
@@ -465,12 +465,12 @@ Two lines in the plane intersecting at a point
 
       <p>
         Usually, two lines in the plane will intersect in one point, but of course this is not always the case.  Consider now the system of equations
-        <md>\def\r{\color{seq-violet}}
-\def\b{\color{seq-green}}
+        <md>
+
 \left\{
 \begin{alignedat}{3}
-\r x \amp \r{}-{} \amp \r 3y \amp \r{}={} \amp \r -3 \\
-\b x \amp \b{}-{} \amp \b 3y \amp \b{}={} \amp \b 3.
+\cp x \amp \cp{}-{} \amp \cp 3y \amp \cp{}={} \amp \cp -3 \\
+\g x \amp \g{}-{} \amp \g 3y \amp \g{}={} \amp \g 3.
 \end{alignedat}
 \right.</md>
         These define <em>parallel</em> lines in the plane.
@@ -499,12 +499,12 @@ Two parallel lines in the plane
 
       <p>
         There is one more possibility.  Consider the system of equations
-        <md>\def\r{\color{seq-violet}}
-\def\b{\color{seq-green}}
+        <md>
+
 \left\{
 \begin{alignedat}{3}
-\r x \amp \r{}-{} \amp \r 3y \amp \r{}={} \amp \r -3 \\
-\b 2x \amp \b{}-{} \amp \b 6y \amp \b{}={} \amp \b -6.
+\cp x \amp \cp{}-{} \amp \cp 3y \amp \cp{}={} \amp \cp -3 \\
+\g 2x \amp \g{}-{} \amp \g 6y \amp \g{}={} \amp \g -6.
 \end{alignedat}
 \right.</md>
         The second equation is a multiple of the first, so these equations define the <em>same</em> line in the plane.
@@ -536,12 +536,12 @@ Two lines in the plane that are equal
 
       <p>
         Consider the system of two linear equations
-        <md>\def\r{\color{seq-violet}}
-\def\b{\color{seq-green}}
+        <md>
+
 \left\{
 \begin{alignedat}{4}
-\r x \amp \r{}+{} \amp \r y \amp \r{}+{} \amp \r z \amp \r{}={} \amp \r 1 \\
-\b x \amp \amp \amp \b{}-{} \amp \b z \amp \b{}={} \amp \b 0.
+\cp x \amp \cp{}+{} \amp \cp y \amp \cp{}+{} \amp \cp z \amp \cp{}={} \amp \cp 1 \\
+\g x \amp \amp \amp \g{}-{} \amp \g z \amp \g{}={} \amp \g 0.
 \end{alignedat}
 \right.</md>
         Each equation individually defines a plane in space.  The solutions of the system of both equations are the points that lie on both planes.  We can see in the picture below that the planes intersect in a line.  In particular, this system has infinitely many solutions.
@@ -558,6 +558,100 @@ Two lines in the plane that are equal
         In general, the solutions of a system of equations in <m>n</m> variables is the intersection of <q><m>(n-1)</m>-planes</q> in <m>n</m>-space.  This is always some kind of linear space, as we will discuss in <xref provisional="solution-sets"/>.
       </p>
     </problem>
+
+  </subsection>
+
+  <subsection>
+    <title>Parametric Description of Solution Sets</title>
+    <idx><h>Implicit equation</h></idx>
+    <idx><h>Parametric form</h></idx>
+
+    <p>
+      According to <xref ref="systems-eqns-soln-sets"/>, solving a system of equations means writing down all solutions in terms of some number of parameters.  We will give a systematic way of doing so in <xref ref="parametric-form" text="type-global"/>; for now we give parametric descriptions in the examples of the previous <xref ref="systems-eqns-pictures" text="type-global"/>.
+    </p>
+
+    <observation>
+      <title>Lines</title>
+      <idx><h>Line</h><h>parametric form of</h></idx>
+
+      <p>
+        Consider the linear equation <m>x+y=1</m> of this <xref ref="systems-eqns-picture-line"/>.  In this context, we call <m>x+y=1</m> an <term>implicit equation</term> of the line.  We can write the same line in <term>parametric form</term> as follows:
+        <md>
+<mrow>(x, y) = (t,\, 1-t) \sptxt{for any} t \in \R.</mrow>
+</md>
+        This means that every point on the line has the form <m>(t,\, 1-t)</m> for some real number <m>t</m>.  In this case, we call <m>t</m> a <term>parameter</term>, as it <em>parameterizes</em> the points on the line.
+        </p>
+<image xml:id="img-parameterized-line-intro" width="60%">
+<shortdescription>
+<!-- FILL: Brief alt-text for this TikZ figure (linear algebra context) -->
+</shortdescription>
+<description>
+<p>
+<!-- FILL: Complete accessibility description of this TikZ figure for a linear algebra course -->
+</p>
+</description>
+<latex-image><![CDATA[
+  \begin{tikzpicture}[every label/.style={font=\small, thin border}]
+    \draw[grid lines] (-3,-3) grid (3,3);
+    \draw[->] (-3,0) -- (3,0);
+    \draw[->] (0,-3) -- (0,3);
+    \draw[{Stealth}-{Stealth}, seq-violet, thick] (-2,3) -- (3,-2);
+    \point["$t=0$" above right] at (0,1);
+    \point["$t=1$" above right] at (1,0);
+    \point["$t=-1$" below left] at (-1,2);
+  \end{tikzpicture}
+          ]]></latex-image>
+</image>
+
+      <p>
+        Now consider the system of two linear equations
+        <md>
+<mrow>\left\{\begin{alignedat}{4}
+\cp x \cp \amp {}+{} \amp \cp y \cp \amp {}+{} \amp \cp z \cp \amp {}={} \amp \cp 1 \amp {} \\
+\g x \amp {}{} \amp {} \g \amp {}-{} \amp \g z \g \amp {}={} \amp \g 0 \amp {}
+\end{alignedat}\right.</mrow>
+</md>
+        of <xref ref="systems-eqns-two-planes"/>.  These collectively form the <term>implicit equations</term> for a line in <m>\R^3</m>.  (At least two equations are needed to define a line in space.)  This line also has a <term>parametric form</term> with one <term>parameter</term> <m>t</m>:
+        <md>
+<mrow>(x,\, y,\, z) = (t,\, 1-2t,\, t).</mrow>
+</md>
+      </p>
+
+      <figure>
+        <caption>The planes defined by the equations <m>\color{seq-violet}x+y+z=1</m> and <m>\color{seq-green}x-z=0</m> intersect in the yellow line, which is parameterized by <m>(x,y,z) = (t,1-2t,t)</m>.  Move the slider to change the parameterized point.</caption>
+        <mathbox source="demos/parametric2.html" height="400px"/>
+      </figure>
+
+      <p>
+        Note that in each case, the parameter <m>t</m> allows us to use <m>\R</m> to <em>label</em> the points on the line.  However, neither line is the same as the number line <m>\R</m>: indeed, every point on the first line has two coordinates, like the point <m>(0,1)</m>, and every point on the second line has three coordinates, like <m>(0,1,0)</m>.
+      </p>
+    </observation>
+
+    <observation>
+      <title>Planes</title>
+      <idx><h>Plane</h><h>parametric form of</h></idx>
+
+      <p>
+        Consider the linear equation <m>x+y+z=1</m> of <xref ref="systems-eqns-picture-plane"/>.  This is an <term>implicit equation</term> of a plane in space.  This plane has an equation in <term>parametric form</term>: we can write every point on the plane as
+        <md>
+<mrow>(x,\, y,\, z) = (1-t-w,\, t,\, w) \sptxt{for any} t,w\in\R.</mrow>
+</md>
+        In this case, we need two <term>parameters</term> <m>t</m> and <m>w</m> to describe all points on the plane.
+      </p>
+
+      <figure>
+        <caption>The plane in <m>\R^3</m> defined by the equation <m>x+y+z=1</m>.  This plane is parameterized by two numbers <m>t,w</m>; move the sliders to change the parameterized point.</caption>
+        <mathbox source="demos/plane.html?coeffs=t,w&amp;range=5" height="400px"/>
+      </figure>
+
+      <p>
+        Note that the parameters <m>t,w</m> allow us to use <m>\R^2</m> to <em>label</em> the points on the plane.  However, this plane is <em>not</em> the same as the plane <m>\R^2</m>: indeed, every point on this plane has three coordinates, like the point <m>(0,0,1)</m>.
+      </p>
+    </observation>
+
+    <p>
+      When there is a unique solution, as in <xref ref="systems-eqns-picture-2lines"/>, it is not necessary to use parameters to describe the solution set.
+    </p>
 
   </subsection>
 </section>
