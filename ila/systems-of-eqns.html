@@ -19,6 +19,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="_static/pretext/fonts/material-symbols-outlined.css">
 <link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<style>
+@counter-style ptx-marker-1 { system: extends upper-alpha; prefix: ''; suffix: '. '; }
+</style>
 <script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
 startMathJax({
 hasWebworkReps: false,
@@ -30,9 +33,9 @@ lang: "en-US",
 </script><script defer data-pretext-mathjax="true" onerror="this.dataset.loadFailed = 'true';" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
-<meta name="twitter:title" content="Interactive Linear Algebra">
-<meta property="og:title" content="Interactive Linear Algebra">
-<meta property="book:title" content="Interactive Linear Algebra">
+<meta name="twitter:title" content="Interactive Linear Algebra: Updated Edition">
+<meta property="og:title" content="Interactive Linear Algebra: Updated Edition">
+<meta property="book:title" content="Interactive Linear Algebra: Updated Edition">
 <meta name="twitter:card" content="summary">
 <script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.55"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.55"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
@@ -73,11 +76,11 @@ eBookConfig.enable_chatcodes =  false;
 <body class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner">
 <a id="logo-link" class="logo-link" target="_blank" href="https://gatech.edu/"><img src="external/images/logo.gif" alt="Logo image"></a><div class="title-container">
-<div class="heading ptx-banner-heading"><a href="main.html"><span class="title">Interactive Linear Algebra</span></a></div>
+<div class="heading ptx-banner-heading"><a href="main.html"><span class="title">Interactive Linear Algebra: Updated Edition</span></a></div>
 <p class="byline">Dan Margalit, Joseph Rabinoff</p>
 </div>
 </div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
-<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-3.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="ptx-search-box">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-4.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="ptx-search-box">
 <div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
 <input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
@@ -117,6 +120,12 @@ eBookConfig.enable_chatcodes =  false;
 </fieldset>
 <div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="chap-algebra-2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap-algebra.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="row-reduction.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{mathtools}\require{color}    \definecolor{highlight}{RGB}{168, 101, 0}
+    \definecolor{contrastGreen}{RGB}{67, 130, 62}
+    \definecolor{contrastPurple}{RGB}{160, 89, 171}
+    \definecolor{contrastBlue}{RGB}{76, 143, 255}
+    \newcommand{\g}{\color{contrastGreen}}
+    \newcommand{\cp}{\color{contrastPurple}}
+    \newcommand{\b}{\color{contrastBlue}}
     \renewcommand{\r}{\color{highlight}}
   \newcommand{\R}{\mathbf R}
   \newcommand{\C}{\mathbf C}
@@ -154,8 +163,8 @@ eBookConfig.enable_chatcodes =  false;
 
 \definecolor{seq-red}{rgb}{0.8941,0.1020,0.1098}
 \definecolor{seq-blue}{rgb}{0.2157,0.4941,0.7216}
-\definecolor{seq-green}{rgb}{0.3020,0.6863,0.2902}
-\definecolor{seq-violet}{rgb}{0.5961,0.3059,0.6392}
+\definecolor{seq-green}{RGB}{67, 130, 62}
+\definecolor{seq-violet}{RGB}{160, 89, 171}
 \definecolor{seq-orange}{rgb}{1.0000,0.4980,0.0000}
 \definecolor{seq-yellow}{rgb}{0.7000,0.7000,0.0000}
 \definecolor{seq-brown}{rgb}{0.6510,0.3373,0.1569}
@@ -177,6 +186,7 @@ eBookConfig.enable_chatcodes =  false;
 <ul id="ptx-toc-group-frontmatter-4" class="structural toc-item-list"><li class="toc-item toc-contributors"><div class="toc-title-box"><a href="frontmatter-4.html#frontmatter-4-2" class="internal"><span class="title"></span></a></div></li></ul>
 </li>
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Variants of this textbook</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-6.html" class="internal"><span class="title">History of the Updated Edition</span></a></div></li>
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="overview.html" class="internal"><span class="title">Overview</span></a></div></li>
 </ul>
 </li>
@@ -189,6 +199,7 @@ eBookConfig.enable_chatcodes =  false;
 <ul class="structural toc-item-list active" id="ptx-toc-group-systems-of-eqns">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="systems-of-eqns.html#subsection-Rn" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Line, Plane, Space, Etc.</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="systems-of-eqns.html#systems-eqns-pictures" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Pictures of Solution Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="systems-of-eqns.html#systems-of-eqns-6" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Parametric Description of Solution Sets</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -211,8 +222,9 @@ eBookConfig.enable_chatcodes =  false;
 <div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
 <ul id="ptx-toc-group-backmatter" class="structural toc-item-list">
 <li class="toc-item toc-appendix"><div class="toc-title-box"><a href="backmatter-2.html" class="internal"><span class="codenumber">A.</span> <span class="title">Notation</span></a></div></li>
-<li class="toc-item toc-index"><div class="toc-title-box"><a href="backmatter-3.html" class="internal"><span class="title">Index</span></a></div></li>
-<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-4.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-gfdl.html" class="internal"><span class="codenumber">B.</span> <span class="title">GNU Free Documentation License</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="backmatter-4.html" class="internal"><span class="title">Index</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-5.html" class="internal"><span class="title">Colophon</span></a></div></li>
 </ul>
 </li>
 </ul></nav></div>
@@ -498,12 +510,10 @@ x \amp {}+{} \amp 2y \amp {}={} \amp -3.
 <div class="para">Now consider the system of two linear equations</div>
 <div class="displaymath process-math" id="systems-eqns-picture-2lines-2-1">
 \begin{equation*}
-\def\r{\color{seq-violet}}
-\def\b{\color{seq-green}}
 \left\{
 \begin{alignedat}{3}
-\r x \amp \r{}-{} \amp \r 3y \amp \r{}={} \amp \r -3 \\
-\b 2x \amp \b{}+{} \amp \b y \amp \b{}={} \amp \b 8.
+\cp x \amp \cp{}-{} \amp \cp 3y \amp \cp{}={} \amp \cp -3 \\
+\g 2x \amp \g{}+{} \amp \g y \amp \g{}={} \amp \g 8.
 \end{alignedat}
 \right.
 \end{equation*}
@@ -518,12 +528,10 @@ x \amp {}+{} \amp 2y \amp {}={} \amp -3.
 <div class="para">Usually, two lines in the plane will intersect in one point, but of course this is not always the case.  Consider now the system of equations</div>
 <div class="displaymath process-math" id="systems-eqns-picture-2lines-5-1">
 \begin{equation*}
-\def\r{\color{seq-violet}}
-\def\b{\color{seq-green}}
 \left\{
 \begin{alignedat}{3}
-\r x \amp \r{}-{} \amp \r 3y \amp \r{}={} \amp \r -3 \\
-\b x \amp \b{}-{} \amp \b 3y \amp \b{}={} \amp \b 3.
+\cp x \amp \cp{}-{} \amp \cp 3y \amp \cp{}={} \amp \cp -3 \\
+\g x \amp \g{}-{} \amp \g 3y \amp \g{}={} \amp \g 3.
 \end{alignedat}
 \right.
 \end{equation*}
@@ -538,12 +546,10 @@ x \amp {}+{} \amp 2y \amp {}={} \amp -3.
 <div class="para">There is one more possibility.  Consider the system of equations</div>
 <div class="displaymath process-math" id="systems-eqns-picture-2lines-8-1">
 \begin{equation*}
-\def\r{\color{seq-violet}}
-\def\b{\color{seq-green}}
 \left\{
 \begin{alignedat}{3}
-\r x \amp \r{}-{} \amp \r 3y \amp \r{}={} \amp \r -3 \\
-\b 2x \amp \b{}-{} \amp \b 6y \amp \b{}={} \amp \b -6.
+\cp x \amp \cp{}-{} \amp \cp 3y \amp \cp{}={} \amp \cp -3 \\
+\g 2x \amp \g{}-{} \amp \g 6y \amp \g{}={} \amp \g -6.
 \end{alignedat}
 \right.
 \end{equation*}
@@ -563,12 +569,10 @@ x \amp {}+{} \amp 2y \amp {}={} \amp -3.
 <div class="para">Consider the system of two linear equations</div>
 <div class="displaymath process-math" id="systems-eqns-two-planes-2-1">
 \begin{equation*}
-\def\r{\color{seq-violet}}
-\def\b{\color{seq-green}}
 \left\{
 \begin{alignedat}{4}
-\r x \amp \r{}+{} \amp \r y \amp \r{}+{} \amp \r z \amp \r{}={} \amp \r 1 \\
-\b x \amp \amp \amp \b{}-{} \amp \b z \amp \b{}={} \amp \b 0.
+\cp x \amp \cp{}+{} \amp \cp y \amp \cp{}+{} \amp \cp z \amp \cp{}={} \amp \cp 1 \\
+\g x \amp \amp \amp \g{}-{} \amp \g z \amp \g{}={} \amp \g 0.
 \end{alignedat}
 \right.
 \end{equation*}
@@ -587,6 +591,78 @@ x \amp {}+{} \amp 2y \amp {}={} \amp -3.
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Remark 1.23"><a tabindex="-1" href="#systems-eqns-pictures-11" title="Copy heading and permalink for Remark 1.23" aria-label="Copy heading and permalink for Remark 1.23">🔗</a></div>
 </article></details><div class="autopermalink" aria-hidden="true" data-description="Subsection 1.1.2: Pictures of Solution Sets"><a tabindex="-1" href="#systems-eqns-pictures" title="Copy heading and permalink for Subsection 1.1.2: Pictures of Solution Sets" aria-label="Copy heading and permalink for Subsection 1.1.2: Pictures of Solution Sets">🔗</a></div>
+</section>
+<section class="subsection" id="systems-of-eqns-6">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Parametric Description of Solution Sets</span>
+</h2>
+<div class="para" id="systems-of-eqns-6-4">According to <a href="systems-of-eqns.html#systems-eqns-soln-sets" class="xref" data-knowl="./knowl/xref/systems-eqns-soln-sets.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.3: Solution sets">Definition 3</a>, solving a system of equations means writing down all solutions in terms of some number of parameters.  We will give a systematic way of doing so in <a href="parametric-form.html" class="internal" title="Section 1.3: Parametric Form">Section 1.3</a>; for now we give parametric descriptions in the examples of the previous <a href="systems-of-eqns.html#systems-eqns-pictures" class="internal" title="Subsection 1.1.2: Pictures of Solution Sets">Subsection 1.1.2</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#systems-of-eqns-6-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="observation remark-like" id="systems-of-eqns-6-5"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.24</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Lines.</span>
+</h3>
+<div class="para logical" id="systems-of-eqns-6-5-3">
+<div class="para">Consider the linear equation <span class="process-math">\(x+y=1\)</span> of this <a href="systems-of-eqns.html#systems-eqns-picture-line" class="xref" data-knowl="./knowl/xref/systems-eqns-picture-line.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.15: One Equation in Two Variables">Example 15</a>.  In this context, we call <span class="process-math">\(x+y=1\)</span> an <dfn class="terminology">implicit equation</dfn> of the line.  We can write the same line in <dfn class="terminology">parametric form</dfn> as follows:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/systems-eqns-picture-line.html" id="systems-of-eqns-6-5-3-6">
+\begin{gather*}
+(x, y) = (t,\, 1-t) \sptxt{for any} t \in \R.
+\end{gather*}
+</div>
+<div class="para">This means that every point on the line has the form <span class="process-math">\((t,\, 1-t)\)</span> for some real number <span class="process-math">\(t\text{.}\)</span>  In this case, we call <span class="process-math">\(t\)</span> a <dfn class="terminology">parameter</dfn>, as it <em class="emphasis">parameterizes</em> the points on the line.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#systems-of-eqns-6-5-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;">
+<img src="generated/latex-image/img-parameterized-line-intro.svg" role="img" class="contained" alt=""><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="img-parameterized-line-intro-description">
+<div class="para" id="img-parameterized-line-intro-2-1"><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#img-parameterized-line-intro-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+</div></details>
+</div>
+<div class="para logical" id="systems-of-eqns-6-5-5">
+<div class="para">Now consider the system of two linear equations</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/systems-eqns-two-planes.html" id="systems-of-eqns-6-5-5-1">
+\begin{align*}
+\left\{\begin{alignedat}{4}
+\cp x \cp \amp {}+{} \amp \cp y \cp \amp {}+{} \amp \cp z \cp \amp {}={} \amp \cp 1 \amp {} \\
+\g x \amp {}{} \amp {} \g \amp {}-{} \amp \g z \g \amp {}={} \amp \g 0 \amp {}
+\end{alignedat}\right.
+\end{align*}
+</div>
+<div class="para">of <a href="systems-of-eqns.html#systems-eqns-two-planes" class="xref" data-knowl="./knowl/xref/systems-eqns-two-planes.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.21: Two Equations in Three Variables">Example 21</a>.  These collectively form the <dfn class="terminology">implicit equations</dfn> for a line in <span class="process-math">\(\R^3\text{.}\)</span>  (At least two equations are needed to define a line in space.)  This line also has a <dfn class="terminology">parametric form</dfn> with one <dfn class="terminology">parameter</dfn> <span class="process-math">\(t\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/systems-eqns-two-planes.html" id="systems-of-eqns-6-5-5-8">
+\begin{gather*}
+(x,\, y,\, z) = (t,\, 1-2t,\, t).
+\end{gather*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#systems-of-eqns-6-5-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="systems-of-eqns-6-5-6"><figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.25<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The planes defined by the equations <span class="process-math">\(\color{seq-violet}x+y+z=1\)</span> and <span class="process-math">\(\color{seq-green}x-z=0\)</span> intersect in the yellow line, which is parameterized by <span class="process-math">\((x,y,z) = (t,1-2t,t)\text{.}\)</span>  Move the slider to change the parameterized point.<div class="autopermalink" aria-hidden="true" data-description="Figure 1.25"><a tabindex="-1" href="#systems-of-eqns-6-5-6" title="Copy heading and permalink for Figure 1.25" aria-label="Copy heading and permalink for Figure 1.25">🔗</a></div></figcaption>
+</figure>
+<div class="para" id="systems-of-eqns-6-5-7">Note that in each case, the parameter <span class="process-math">\(t\)</span> allows us to use <span class="process-math">\(\R\)</span> to <em class="emphasis">label</em> the points on the line.  However, neither line is the same as the number line <span class="process-math">\(\R\text{:}\)</span> indeed, every point on the first line has two coordinates, like the point <span class="process-math">\((0,1)\text{,}\)</span> and every point on the second line has three coordinates, like <span class="process-math">\((0,1,0)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#systems-of-eqns-6-5-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 1.24: Lines"><a tabindex="-1" href="#systems-of-eqns-6-5" title="Copy heading and permalink for Example 1.24: Lines" aria-label="Copy heading and permalink for Example 1.24: Lines">🔗</a></div>
+</article>
+<article class="observation remark-like" id="systems-of-eqns-6-6"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.26</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Planes.</span>
+</h3>
+<div class="para logical" id="systems-of-eqns-6-6-3">
+<div class="para">Consider the linear equation <span class="process-math">\(x+y+z=1\)</span> of <a href="systems-of-eqns.html#systems-eqns-picture-plane" class="xref" data-knowl="./knowl/xref/systems-eqns-picture-plane.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.17: One Equation in Three Variables">Example 17</a>.  This is an <dfn class="terminology">implicit equation</dfn> of a plane in space.  This plane has an equation in <dfn class="terminology">parametric form</dfn>: we can write every point on the plane as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/systems-eqns-picture-plane.html" id="systems-of-eqns-6-6-3-5">
+\begin{gather*}
+(x,\, y,\, z) = (1-t-w,\, t,\, w) \sptxt{for any} t,w\in\R.
+\end{gather*}
+</div>
+<div class="para">In this case, we need two <dfn class="terminology">parameters</dfn> <span class="process-math">\(t\)</span> and <span class="process-math">\(w\)</span> to describe all points on the plane.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#systems-of-eqns-6-6-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="systems-of-eqns-6-6-4"><figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.27<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The plane in <span class="process-math">\(\R^3\)</span> defined by the equation <span class="process-math">\(x+y+z=1\text{.}\)</span>  This plane is parameterized by two numbers <span class="process-math">\(t,w\text{;}\)</span> move the sliders to change the parameterized point.<div class="autopermalink" aria-hidden="true" data-description="Figure 1.27"><a tabindex="-1" href="#systems-of-eqns-6-6-4" title="Copy heading and permalink for Figure 1.27" aria-label="Copy heading and permalink for Figure 1.27">🔗</a></div></figcaption>
+</figure>
+<div class="para" id="systems-of-eqns-6-6-5">Note that the parameters <span class="process-math">\(t,w\)</span> allow us to use <span class="process-math">\(\R^2\)</span> to <em class="emphasis">label</em> the points on the plane.  However, this plane is <em class="emphasis">not</em> the same as the plane <span class="process-math">\(\R^2\text{:}\)</span> indeed, every point on this plane has three coordinates, like the point <span class="process-math">\((0,0,1)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#systems-of-eqns-6-6-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 1.26: Planes"><a tabindex="-1" href="#systems-of-eqns-6-6" title="Copy heading and permalink for Example 1.26: Planes" aria-label="Copy heading and permalink for Example 1.26: Planes">🔗</a></div>
+</article>
+<div class="para" id="systems-of-eqns-6-7">When there is a unique solution, as in <a href="systems-of-eqns.html#systems-eqns-picture-2lines" class="xref" data-knowl="./knowl/xref/systems-eqns-picture-2lines.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.20: Two Equations in Two Variables">Example 20</a>, it is not necessary to use parameters to describe the solution set.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#systems-of-eqns-6-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Subsection 1.1.3: Parametric Description of Solution Sets"><a tabindex="-1" href="#systems-of-eqns-6" title="Copy heading and permalink for Subsection 1.1.3: Parametric Description of Solution Sets" aria-label="Copy heading and permalink for Subsection 1.1.3: Parametric Description of Solution Sets">🔗</a></div>
 </section><div class="autopermalink" aria-hidden="true" data-description="Section 1.1: Systems of Linear Equations"><a tabindex="-1" href="#systems-of-eqns" title="Copy heading and permalink for Section 1.1: Systems of Linear Equations" aria-label="Copy heading and permalink for Section 1.1: Systems of Linear Equations">🔗</a></div>
 </section>
 </div>

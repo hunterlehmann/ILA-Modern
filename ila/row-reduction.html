@@ -19,6 +19,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="_static/pretext/fonts/material-symbols-outlined.css">
 <link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<style>
+@counter-style ptx-marker-1 { system: extends upper-alpha; prefix: ''; suffix: '. '; }
+</style>
 <script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
 startMathJax({
 hasWebworkReps: false,
@@ -30,9 +33,9 @@ lang: "en-US",
 </script><script defer data-pretext-mathjax="true" onerror="this.dataset.loadFailed = 'true';" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
-<meta name="twitter:title" content="Interactive Linear Algebra">
-<meta property="og:title" content="Interactive Linear Algebra">
-<meta property="book:title" content="Interactive Linear Algebra">
+<meta name="twitter:title" content="Interactive Linear Algebra: Updated Edition">
+<meta property="og:title" content="Interactive Linear Algebra: Updated Edition">
+<meta property="book:title" content="Interactive Linear Algebra: Updated Edition">
 <meta name="twitter:card" content="summary">
 <script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.55"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.55"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
@@ -73,11 +76,11 @@ eBookConfig.enable_chatcodes =  false;
 <body class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner">
 <a id="logo-link" class="logo-link" target="_blank" href="https://gatech.edu/"><img src="external/images/logo.gif" alt="Logo image"></a><div class="title-container">
-<div class="heading ptx-banner-heading"><a href="main.html"><span class="title">Interactive Linear Algebra</span></a></div>
+<div class="heading ptx-banner-heading"><a href="main.html"><span class="title">Interactive Linear Algebra: Updated Edition</span></a></div>
 <p class="byline">Dan Margalit, Joseph Rabinoff</p>
 </div>
 </div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
-<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-3.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="ptx-search-box">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-4.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="ptx-search-box">
 <div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
 <input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
@@ -117,6 +120,12 @@ eBookConfig.enable_chatcodes =  false;
 </fieldset>
 <div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="systems-of-eqns.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap-algebra.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="parametric-form.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{mathtools}\require{color}    \definecolor{highlight}{RGB}{168, 101, 0}
+    \definecolor{contrastGreen}{RGB}{67, 130, 62}
+    \definecolor{contrastPurple}{RGB}{160, 89, 171}
+    \definecolor{contrastBlue}{RGB}{76, 143, 255}
+    \newcommand{\g}{\color{contrastGreen}}
+    \newcommand{\cp}{\color{contrastPurple}}
+    \newcommand{\b}{\color{contrastBlue}}
     \renewcommand{\r}{\color{highlight}}
   \newcommand{\R}{\mathbf R}
   \newcommand{\C}{\mathbf C}
@@ -154,8 +163,8 @@ eBookConfig.enable_chatcodes =  false;
 
 \definecolor{seq-red}{rgb}{0.8941,0.1020,0.1098}
 \definecolor{seq-blue}{rgb}{0.2157,0.4941,0.7216}
-\definecolor{seq-green}{rgb}{0.3020,0.6863,0.2902}
-\definecolor{seq-violet}{rgb}{0.5961,0.3059,0.6392}
+\definecolor{seq-green}{RGB}{67, 130, 62}
+\definecolor{seq-violet}{RGB}{160, 89, 171}
 \definecolor{seq-orange}{rgb}{1.0000,0.4980,0.0000}
 \definecolor{seq-yellow}{rgb}{0.7000,0.7000,0.0000}
 \definecolor{seq-brown}{rgb}{0.6510,0.3373,0.1569}
@@ -177,6 +186,7 @@ eBookConfig.enable_chatcodes =  false;
 <ul id="ptx-toc-group-frontmatter-4" class="structural toc-item-list"><li class="toc-item toc-contributors"><div class="toc-title-box"><a href="frontmatter-4.html#frontmatter-4-2" class="internal"><span class="title"></span></a></div></li></ul>
 </li>
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Variants of this textbook</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-6.html" class="internal"><span class="title">History of the Updated Edition</span></a></div></li>
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="overview.html" class="internal"><span class="title">Overview</span></a></div></li>
 </ul>
 </li>
@@ -189,6 +199,7 @@ eBookConfig.enable_chatcodes =  false;
 <ul id="ptx-toc-group-systems-of-eqns" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="systems-of-eqns.html#subsection-Rn" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Line, Plane, Space, Etc.</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="systems-of-eqns.html#systems-eqns-pictures" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Pictures of Solution Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="systems-of-eqns.html#systems-of-eqns-6" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Parametric Description of Solution Sets</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section contains-active">
@@ -211,8 +222,9 @@ eBookConfig.enable_chatcodes =  false;
 <div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
 <ul id="ptx-toc-group-backmatter" class="structural toc-item-list">
 <li class="toc-item toc-appendix"><div class="toc-title-box"><a href="backmatter-2.html" class="internal"><span class="codenumber">A.</span> <span class="title">Notation</span></a></div></li>
-<li class="toc-item toc-index"><div class="toc-title-box"><a href="backmatter-3.html" class="internal"><span class="title">Index</span></a></div></li>
-<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-4.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-gfdl.html" class="internal"><span class="codenumber">B.</span> <span class="title">GNU Free Documentation License</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="backmatter-4.html" class="internal"><span class="title">Index</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-5.html" class="internal"><span class="title">Colophon</span></a></div></li>
 </ul>
 </li>
 </ul></nav></div>
@@ -329,7 +341,7 @@ x \amp {}+{} \amp 2y \amp {}+{} \amp 3z \amp {}={} \amp 6 \amp {}
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-elimination-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <details id="systems-eqns-example1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.24</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.28</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3></summary>
 <article class="example example-like knowl__content">
 <div class="para" id="systems-eqns-example1-1-1">Solve <a href="systems-of-eqns.html#systems-eqns-example" class="xref" data-knowl="./knowl/xref/systems-eqns-example.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.1">(1.1.1)</a> using the elimination method.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#systems-eqns-example1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -400,10 +412,10 @@ x \amp {}+{} \amp 2y \amp {}+{} \amp 3z \amp {}={} \amp 6 \amp {} \\
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#systems-eqns-example1-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Solution 1.24.1"><a tabindex="-1" href="#systems-eqns-example1-2" title="Copy heading and permalink for Solution 1.24.1" aria-label="Copy heading and permalink for Solution 1.24.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 1.28.1"><a tabindex="-1" href="#systems-eqns-example1-2" title="Copy heading and permalink for Solution 1.28.1" aria-label="Copy heading and permalink for Solution 1.28.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Example 1.24"><a tabindex="-1" href="#systems-eqns-example1" title="Copy heading and permalink for Example 1.24" aria-label="Copy heading and permalink for Example 1.24">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 1.28"><a tabindex="-1" href="#systems-eqns-example1" title="Copy heading and permalink for Example 1.28" aria-label="Copy heading and permalink for Example 1.28">🔗</a></div>
 </article></details>
 <section class="paragraphs" id="row-reduction-elimination-5"><h3 class="heading"><span class="title">Augmented Matrices and Row Operations.</span></h3>
 <div class="para logical" id="row-reduction-elimination-5-2">
@@ -488,15 +500,15 @@ x \amp {}+{} \amp 2y \amp {}+{} \amp 3z \amp {}={} \amp 6 \amp {} \\
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-elimination-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <details id="row-reduction-elimination-5-3" class="problem example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.25</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.29</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4></summary>
 <article class="problem example-like knowl__content">
 <div class="para" id="row-reduction-elimination-5-3-1">When we wrote our row operations above we used expressions like <span class="process-math">\(R_2 = R_2 - 2 \times R_1\text{.}\)</span>  Of course this does not mean that the second row is equal to the second row minus twice the first row.  Instead it means that we are <em class="emphasis">replacing</em> the second row with the second row minus twice the first row.  This kind of syntax is used frequently in computer programming when we want to change the value of a variable.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-elimination-5-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Remark 1.25"><a tabindex="-1" href="#row-reduction-elimination-5-3" title="Copy heading and permalink for Remark 1.25" aria-label="Copy heading and permalink for Remark 1.25">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 1.29"><a tabindex="-1" href="#row-reduction-elimination-5-3" title="Copy heading and permalink for Remark 1.29" aria-label="Copy heading and permalink for Remark 1.29">🔗</a></div>
 </article></details>
 <details id="systems-eqns-example1b" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.26</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.30</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4></summary>
 <article class="example example-like knowl__content">
 <div class="para" id="systems-eqns-example1b-1-1">Solve <a href="systems-of-eqns.html#systems-eqns-example" class="xref" data-knowl="./knowl/xref/systems-eqns-example.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.1">(1.1.1)</a> using row operations.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#systems-eqns-example1b-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -593,35 +605,35 @@ x \amp {}+{} \amp 2y \amp {}+{} \amp 3z \amp {}={} \amp 6 \amp {} \\
 \end{alignedat}\right.
 \end{align*}
 </div>
-<div class="para">Hence <span class="process-math">\(z=3\text{;}\)</span> back-substituting as in <a href="row-reduction.html#systems-eqns-example1" class="xref" data-knowl="./knowl/xref/systems-eqns-example1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.24">Example 24</a> gives <span class="process-math">\((x,y,z)=(1,-2,3)\text{.}\)</span>
+<div class="para">Hence <span class="process-math">\(z=3\text{;}\)</span> back-substituting as in <a href="row-reduction.html#systems-eqns-example1" class="xref" data-knowl="./knowl/xref/systems-eqns-example1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.28">Example 28</a> gives <span class="process-math">\((x,y,z)=(1,-2,3)\text{.}\)</span>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#systems-eqns-example1b-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Solution 1.26.1"><a tabindex="-1" href="#systems-eqns-example1b-2" title="Copy heading and permalink for Solution 1.26.1" aria-label="Copy heading and permalink for Solution 1.26.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 1.30.1"><a tabindex="-1" href="#systems-eqns-example1b-2" title="Copy heading and permalink for Solution 1.30.1" aria-label="Copy heading and permalink for Solution 1.30.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Example 1.26"><a tabindex="-1" href="#systems-eqns-example1b" title="Copy heading and permalink for Example 1.26" aria-label="Copy heading and permalink for Example 1.26">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 1.30"><a tabindex="-1" href="#systems-eqns-example1b" title="Copy heading and permalink for Example 1.30" aria-label="Copy heading and permalink for Example 1.30">🔗</a></div>
 </article></details>
 <article class="insight remark-like" id="row-reduction-elimination-5-5"><h4 class="heading">
-<span class="type">Insight</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.27</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Insight</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.31</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="row-reduction-elimination-5-5-1">The process of doing row operations to a matrix does not change the solution set of the corresponding linear equations!<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-elimination-5-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Insight 1.27"><a tabindex="-1" href="#row-reduction-elimination-5-5" title="Copy heading and permalink for Insight 1.27" aria-label="Copy heading and permalink for Insight 1.27">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Insight 1.31"><a tabindex="-1" href="#row-reduction-elimination-5-5" title="Copy heading and permalink for Insight 1.31" aria-label="Copy heading and permalink for Insight 1.31">🔗</a></div>
 </article>
 <div class="para" id="row-reduction-elimination-5-6">Indeed, the whole point of doing these operations is to solve the equations using the elimination method.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-elimination-5-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="definition definition-like" id="row-reduction-elimination-5-7"><h4 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.28</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.32</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="row-reduction-elimination-5-7-2-1">Two matrices are called <dfn class="terminology">row equivalent</dfn> if one can be obtained from the other by doing some number of row operations.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-elimination-5-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Definition 1.28"><a tabindex="-1" href="#row-reduction-elimination-5-7" title="Copy heading and permalink for Definition 1.28" aria-label="Copy heading and permalink for Definition 1.28">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 1.32"><a tabindex="-1" href="#row-reduction-elimination-5-7" title="Copy heading and permalink for Definition 1.32" aria-label="Copy heading and permalink for Definition 1.32">🔗</a></div>
 </article>
 <div class="para" id="row-reduction-elimination-5-8">So the linear equations of row-equivalent matrices have the <em class="emphasis">same solution set</em>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-elimination-5-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <details id="row-reduction-elimination-5-9" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.29</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">An Inconsistent System.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.33</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">An Inconsistent System.</span>
 </h4></summary>
 <article class="example example-like knowl__content">
 <div class="para logical" id="row-reduction-elimination-5-9-2-1">
@@ -708,10 +720,10 @@ x \amp {}+{} \amp y \amp {}={} \amp 2 \amp {} \\
 <div class="para">Our original system has the same solution set as this system.  But this system has no solutions: there are no values of <span class="process-math">\(x,y\)</span> making the third equation true!  We conclude that our original equation was inconsistent.</div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-elimination-5-9-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Solution 1.29.1"><a tabindex="-1" href="#row-reduction-elimination-5-9-3" title="Copy heading and permalink for Solution 1.29.1" aria-label="Copy heading and permalink for Solution 1.29.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 1.33.1"><a tabindex="-1" href="#row-reduction-elimination-5-9-3" title="Copy heading and permalink for Solution 1.33.1" aria-label="Copy heading and permalink for Solution 1.33.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Example 1.29: An Inconsistent System"><a tabindex="-1" href="#row-reduction-elimination-5-9" title="Copy heading and permalink for Example 1.29: An Inconsistent System" aria-label="Copy heading and permalink for Example 1.29: An Inconsistent System">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 1.33: An Inconsistent System"><a tabindex="-1" href="#row-reduction-elimination-5-9" title="Copy heading and permalink for Example 1.33: An Inconsistent System" aria-label="Copy heading and permalink for Example 1.33: An Inconsistent System">🔗</a></div>
 </article></details><div class="autopermalink" aria-hidden="true" data-description="Paragraphs: Augmented Matrices and Row Operations"><a tabindex="-1" href="#row-reduction-elimination-5" title="Copy heading and permalink for Paragraphs: Augmented Matrices and Row Operations" aria-label="Copy heading and permalink for Paragraphs: Augmented Matrices and Row Operations">🔗</a></div>
 </section><div class="autopermalink" aria-hidden="true" data-description="Subsection 1.2.1: The Elimination Method"><a tabindex="-1" href="#row-reduction-elimination" title="Copy heading and permalink for Subsection 1.2.1: The Elimination Method" aria-label="Copy heading and permalink for Subsection 1.2.1: The Elimination Method">🔗</a></div>
 </section>
@@ -722,7 +734,7 @@ x \amp {}+{} \amp y \amp {}={} \amp 2 \amp {} \\
 <div class="para" id="row-reduction-echelon-forms-2">In the previous <a href="row-reduction.html#row-reduction-elimination" class="internal" title="Subsection 1.2.1: The Elimination Method">Subsection 1.2.1</a> we saw how to translate a system of linear equations into an augmented matrix.  We want to find an <em class="emphasis">algorithm</em> for “solving” such an augmented matrix.  First we must decide what it means for an augmented matrix to be “solved”.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-echelon-forms-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="definition definition-like" id="row-reduction-echelon-forms-3"><h3 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.30</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.34</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para logical" id="row-reduction-echelon-forms-3-2-1">
 <div class="para">A matrix is in <dfn class="terminology">row echelon form</dfn> if:</div>
@@ -744,7 +756,7 @@ x \amp {}+{} \amp y \amp {}={} \amp 2 \amp {} \\
 </ol>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-echelon-forms-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Definition 1.30"><a tabindex="-1" href="#row-reduction-echelon-forms-3" title="Copy heading and permalink for Definition 1.30" aria-label="Copy heading and permalink for Definition 1.30">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 1.34"><a tabindex="-1" href="#row-reduction-echelon-forms-3" title="Copy heading and permalink for Definition 1.34" aria-label="Copy heading and permalink for Definition 1.34">🔗</a></div>
 </article>
 <div class="para logical" id="row-reduction-echelon-forms-4">
 <div class="para">Here is a picture of a matrix in row echelon form:</div>
@@ -765,11 +777,11 @@ x \amp {}+{} \amp y \amp {}={} \amp 2 \amp {} \\
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-echelon-forms-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="definition definition-like" id="row-reduction-echelon-forms-5"><h3 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.31</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.35</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="row-reduction-echelon-forms-5-2-1">A <dfn class="terminology">pivot</dfn> is the first nonzero entry of a row of a matrix in row echelon form.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-echelon-forms-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Definition 1.31"><a tabindex="-1" href="#row-reduction-echelon-forms-5" title="Copy heading and permalink for Definition 1.31" aria-label="Copy heading and permalink for Definition 1.31">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 1.35"><a tabindex="-1" href="#row-reduction-echelon-forms-5" title="Copy heading and permalink for Definition 1.35" aria-label="Copy heading and permalink for Definition 1.35">🔗</a></div>
 </article>
 <div class="para logical" id="row-reduction-echelon-forms-6">
 <div class="para">A matrix in row-echelon form is generally easy to solve using back-substitution.  For example,</div>
@@ -787,11 +799,11 @@ x \amp {}+{} \amp 2y \amp {}+{} \amp 3z \amp {}={} \amp 6 \amp {} \\
 \end{alignedat}\right.
 \end{align*}
 </div>
-<div class="para">We immediately see that <span class="process-math">\(z=3\text{,}\)</span> which implies <span class="process-math">\(y = 4-2\cdot 3 = -2\)</span> and <span class="process-math">\(x = 6 - 2(-2) - 3\cdot 3 = 1.\)</span>  See <a href="row-reduction.html#systems-eqns-example1b" class="xref" data-knowl="./knowl/xref/systems-eqns-example1b.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.26">Example 26</a>.</div>
+<div class="para">We immediately see that <span class="process-math">\(z=3\text{,}\)</span> which implies <span class="process-math">\(y = 4-2\cdot 3 = -2\)</span> and <span class="process-math">\(x = 6 - 2(-2) - 3\cdot 3 = 1.\)</span>  See <a href="row-reduction.html#systems-eqns-example1b" class="xref" data-knowl="./knowl/xref/systems-eqns-example1b.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.30">Example 30</a>.</div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-echelon-forms-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="definition definition-like" id="row-reduction-echelon-forms-7"><h3 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.32</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.36</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para logical" id="row-reduction-echelon-forms-7-2-1">
 <div class="para">A matrix is in <dfn class="terminology">reduced row echelon form</dfn> if it is in row echelon form, and in addition:</div>
@@ -809,7 +821,7 @@ x \amp {}+{} \amp 2y \amp {}+{} \amp 3z \amp {}={} \amp 6 \amp {} \\
 </ol>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-echelon-forms-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Definition 1.32"><a tabindex="-1" href="#row-reduction-echelon-forms-7" title="Copy heading and permalink for Definition 1.32" aria-label="Copy heading and permalink for Definition 1.32">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 1.36"><a tabindex="-1" href="#row-reduction-echelon-forms-7" title="Copy heading and permalink for Definition 1.36" aria-label="Copy heading and permalink for Definition 1.36">🔗</a></div>
 </article>
 <div class="para logical" id="row-reduction-echelon-forms-8">
 <div class="para">Here is a picture of a matrix in reduced row echelon form:</div>
@@ -848,7 +860,7 @@ z \amp {}={} \amp 3. \amp {}
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-echelon-forms-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <details id="row-reduction-echelon-forms-10" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.33</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.37</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3></summary>
 <article class="example example-like knowl__content">
 <div class="para logical" id="row-reduction-echelon-forms-10-1">
@@ -920,19 +932,19 @@ z \amp {}={} \amp 3. \amp {}
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-echelon-forms-10-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Example 1.33"><a tabindex="-1" href="#row-reduction-echelon-forms-10" title="Copy heading and permalink for Example 1.33" aria-label="Copy heading and permalink for Example 1.33">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 1.37"><a tabindex="-1" href="#row-reduction-echelon-forms-10" title="Copy heading and permalink for Example 1.37" aria-label="Copy heading and permalink for Example 1.37">🔗</a></div>
 </article></details>
 <article class="insight remark-like" id="row-reduction-echelon-forms-11"><h3 class="heading">
-<span class="type">Insight</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.34</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Insight</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.38</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="row-reduction-echelon-forms-11-1">When deciding if an augmented matrix is in (reduced) row echelon form, there is nothing special about the augmented column(s).  Just ignore the vertical line.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-echelon-forms-11-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Insight 1.34"><a tabindex="-1" href="#row-reduction-echelon-forms-11" title="Copy heading and permalink for Insight 1.34" aria-label="Copy heading and permalink for Insight 1.34">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Insight 1.38"><a tabindex="-1" href="#row-reduction-echelon-forms-11" title="Copy heading and permalink for Insight 1.38" aria-label="Copy heading and permalink for Insight 1.38">🔗</a></div>
 </article>
 <div class="para" id="row-reduction-echelon-forms-12">If an augmented matrix is in reduced row echelon form, the corresponding linear system is viewed as <em class="emphasis">solved</em>.  We will see below why this is the case, and we will show that any matrix can be put into reduced row echelon form using only row operations.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-echelon-forms-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <details id="row-reduction-echelon-forms-13" class="problem example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
-<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.35</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Why the word “pivot”?</span>
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.39</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Why the word “pivot”?</span>
 </h3></summary>
 <article class="problem example-like knowl__content">
 <div class="para logical" id="row-reduction-echelon-forms-13-2">
@@ -975,14 +987,14 @@ x \amp {}-{} \amp y \amp {}={} \amp 0 \amp {} \\
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-echelon-forms-13-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;">
-<img src="generated/latex-image/row-reduction-echelon-forms-13-3.svg" role="img" class="contained" alt=""><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="row-reduction-echelon-forms-13-3-description">
-<div class="para" id="row-reduction-echelon-forms-13-3-2-1"><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-echelon-forms-13-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;">
+<img src="generated/latex-image/img-pivot-history.svg" role="img" class="contained" alt=""><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="img-pivot-history-description">
+<div class="para" id="img-pivot-history-2-1"><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#img-pivot-history-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
 </div></details>
 </div>
 <div class="para" id="row-reduction-echelon-forms-13-4">What has happened geometrically is that the original blue line has been replaced with the new blue line <span class="process-math">\(y=1\text{.}\)</span>  We can think of the blue line as rotating, or pivoting, around the solution <span class="process-math">\((1,1)\text{.}\)</span>  We used the pivot position in the matrix in order to make the blue line pivot like this.  This is one possible explanation for the terminology “pivot”.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-echelon-forms-13-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description='Remark 1.35: Why the word "pivot"?'><a tabindex="-1" href="#row-reduction-echelon-forms-13" title='Copy heading and permalink for Remark 1.35: Why the word "pivot"?' aria-label='Copy heading and permalink for Remark 1.35: Why the word "pivot"?'>🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description='Remark 1.39: Why the word "pivot"?'><a tabindex="-1" href="#row-reduction-echelon-forms-13" title='Copy heading and permalink for Remark 1.39: Why the word "pivot"?' aria-label='Copy heading and permalink for Remark 1.39: Why the word "pivot"?'>🔗</a></div>
 </article></details><div class="autopermalink" aria-hidden="true" data-description="Subsection 1.2.2: Echelon Forms"><a tabindex="-1" href="#row-reduction-echelon-forms" title="Copy heading and permalink for Subsection 1.2.2: Echelon Forms" aria-label="Copy heading and permalink for Subsection 1.2.2: Echelon Forms">🔗</a></div>
 </section>
 <section class="subsection" id="row-reduction-6">
@@ -990,27 +1002,27 @@ x \amp {}-{} \amp y \amp {}={} \amp 0 \amp {} \\
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Row Reduction Algorithm</span>
 </h2>
 <article class="theorem theorem-like" id="row-reduction-works"><h3 class="heading">
-<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.36</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.40</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="row-reduction-works-1-1">Every matrix is row equivalent to one and only one matrix in reduced row echelon form.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-works-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Theorem 1.36"><a tabindex="-1" href="#row-reduction-works" title="Copy heading and permalink for Theorem 1.36" aria-label="Copy heading and permalink for Theorem 1.36">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 1.40"><a tabindex="-1" href="#row-reduction-works" title="Copy heading and permalink for Theorem 1.40" aria-label="Copy heading and permalink for Theorem 1.40">🔗</a></div>
 </article>
 <div class="para" id="row-reduction-6-3">We will give an algorithm, called <dfn class="terminology">row reduction</dfn> or <dfn class="terminology">Gaussian elimination</dfn>, which demonstrates that every matrix is row equivalent to <em class="emphasis">at least one</em> matrix in reduced row echelon form.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-6-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="insight remark-like" id="row-reduction-6-4"><h3 class="heading">
-<span class="type">Insight</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.37</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Insight</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.41</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="row-reduction-6-4-1">The uniqueness statement is interesting—it means that, no matter <em class="emphasis">how</em> you row reduce, you <em class="emphasis">always</em> get the same matrix in reduced row echelon form.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-6-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Insight 1.37"><a tabindex="-1" href="#row-reduction-6-4" title="Copy heading and permalink for Insight 1.37" aria-label="Copy heading and permalink for Insight 1.37">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Insight 1.41"><a tabindex="-1" href="#row-reduction-6-4" title="Copy heading and permalink for Insight 1.41" aria-label="Copy heading and permalink for Insight 1.41">🔗</a></div>
 </article>
 <div class="para" id="row-reduction-6-5">This assumes, of course, that you only do the three legal row operations, and you don’t make any arithmetic errors.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-6-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="row-reduction-6-6">We will not prove uniqueness, but maybe you can!<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-6-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="algorithm theorem-like" id="algo-row-reduction"><h3 class="heading">
-<span class="type">Algorithm</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.38</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Row Reduction.</span>
+<span class="type">Algorithm</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.42</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Row Reduction.</span>
 </h3>
 <div class="para logical" id="algo-row-reduction-4-1">
 <ul class="no-marker" id="algo-row-reduction-4-1-1">
@@ -1062,10 +1074,10 @@ x \amp {}-{} \amp y \amp {}={} \amp 0 \amp {} \\
 </ul>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#algo-row-reduction-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Algorithm 1.38: Row Reduction"><a tabindex="-1" href="#algo-row-reduction" title="Copy heading and permalink for Algorithm 1.38: Row Reduction" aria-label="Copy heading and permalink for Algorithm 1.38: Row Reduction">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Algorithm 1.42: Row Reduction"><a tabindex="-1" href="#algo-row-reduction" title="Copy heading and permalink for Algorithm 1.42: Row Reduction" aria-label="Copy heading and permalink for Algorithm 1.42: Row Reduction">🔗</a></div>
 </article>
 <details id="row-reduction-eg1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.39</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.43</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3></summary>
 <article class="example example-like knowl__content">
 <div class="para logical" id="row-reduction-eg1-1-1">
@@ -1110,11 +1122,11 @@ x \amp {} \amp {} \amp {} \amp {} \amp {}={} \amp 1 \amp {} \\
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-eg1-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<figure class="figure figure-like" id="row-reduction-eg1-2-3"><figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.40<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Animated slideshow of the row reduction in this example.<div class="autopermalink" aria-hidden="true" data-description="Figure 1.40"><a tabindex="-1" href="#row-reduction-eg1-2-3" title="Copy heading and permalink for Figure 1.40" aria-label="Copy heading and permalink for Figure 1.40">🔗</a></div></figcaption>
-</figure><div class="autopermalink" aria-hidden="true" data-description="Solution 1.39.1"><a tabindex="-1" href="#row-reduction-eg1-2" title="Copy heading and permalink for Solution 1.39.1" aria-label="Copy heading and permalink for Solution 1.39.1">🔗</a></div>
+<figure class="figure figure-like" id="row-reduction-eg1-2-3"><figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.44<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Animated slideshow of the row reduction in this example.<div class="autopermalink" aria-hidden="true" data-description="Figure 1.44"><a tabindex="-1" href="#row-reduction-eg1-2-3" title="Copy heading and permalink for Figure 1.44" aria-label="Copy heading and permalink for Figure 1.44">🔗</a></div></figcaption>
+</figure><div class="autopermalink" aria-hidden="true" data-description="Solution 1.43.1"><a tabindex="-1" href="#row-reduction-eg1-2" title="Copy heading and permalink for Solution 1.43.1" aria-label="Copy heading and permalink for Solution 1.43.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Example 1.39"><a tabindex="-1" href="#row-reduction-eg1" title="Copy heading and permalink for Example 1.39" aria-label="Copy heading and permalink for Example 1.39">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 1.43"><a tabindex="-1" href="#row-reduction-eg1" title="Copy heading and permalink for Example 1.43" aria-label="Copy heading and permalink for Example 1.43">🔗</a></div>
 </article></details>
 <div class="para" id="row-reduction-6-9">Here is the row reduction algorithm, summarized in pictures. <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-6-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -1126,16 +1138,16 @@ x \amp {} \amp {} \amp {} \amp {} \amp {}={} \amp 1 \amp {} \\
 <div class="para" id="row-reduction-6-11">It will be very important to know where are the pivots of a matrix after row reducing; this is the reason for the following piece of terminology.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-6-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="definition definition-like" id="defn-pivot-pos"><h3 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.41</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.45</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="defn-pivot-pos-2-1">A <dfn class="terminology">pivot position</dfn> of a matrix is an entry that is a pivot of a row echelon form of that matrix.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#defn-pivot-pos-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> 
 <div class="para" id="defn-pivot-pos-2-2">A <dfn class="terminology">pivot column</dfn> of a matrix is a column that contains a pivot position.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#defn-pivot-pos-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Definition 1.41"><a tabindex="-1" href="#defn-pivot-pos" title="Copy heading and permalink for Definition 1.41" aria-label="Copy heading and permalink for Definition 1.41">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 1.45"><a tabindex="-1" href="#defn-pivot-pos" title="Copy heading and permalink for Definition 1.45" aria-label="Copy heading and permalink for Definition 1.45">🔗</a></div>
 </article>
 <details id="pivot-pos-eg" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.42</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Pivot Positions.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.46</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Pivot Positions.</span>
 </h3></summary>
 <article class="example example-like knowl__content">
 <div class="para logical" id="pivot-pos-eg-2-1">
@@ -1155,7 +1167,7 @@ A = \left(\begin{array}{rrr|r}
 <details id="pivot-pos-eg-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
 <div class="solution solution-like knowl__content">
 <div class="para logical" id="pivot-pos-eg-3-1">
-<div class="para">We saw in <a href="row-reduction.html#row-reduction-eg1" class="xref" data-knowl="./knowl/xref/row-reduction-eg1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.39">Example 39</a> that a row echelon form of the matrix is</div>
+<div class="para">We saw in <a href="row-reduction.html#row-reduction-eg1" class="xref" data-knowl="./knowl/xref/row-reduction-eg1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.43">Example 43</a> that a row echelon form of the matrix is</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/row-reduction-eg1.html" id="pivot-pos-eg-3-1-2">
 \begin{align*}
 \left(\begin{array}{rrr|r}
@@ -1165,7 +1177,7 @@ A = \left(\begin{array}{rrr|r}
 \end{array}\right).
 \end{align*}
 </div>
-<div class="para">The pivot positions of <span class="process-math">\(A\)</span> are the entries that become pivots in a row echelon form; they are marked in red below:</div>
+<div class="para">The pivot positions of <span class="process-math">\(A\)</span> are the entries that become pivots in a row echelon form; they are marked in color below:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/row-reduction-eg1.html" id="pivot-pos-eg-3-1-4">
 \begin{align*}
 \left(\begin{array}{rrr|r}
@@ -1178,13 +1190,13 @@ A = \left(\begin{array}{rrr|r}
 <div class="para">The first, second, and third columns are pivot columns.</div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#pivot-pos-eg-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Solution 1.42.1"><a tabindex="-1" href="#pivot-pos-eg-3" title="Copy heading and permalink for Solution 1.42.1" aria-label="Copy heading and permalink for Solution 1.42.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 1.46.1"><a tabindex="-1" href="#pivot-pos-eg-3" title="Copy heading and permalink for Solution 1.46.1" aria-label="Copy heading and permalink for Solution 1.46.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Example 1.42: Pivot Positions"><a tabindex="-1" href="#pivot-pos-eg" title="Copy heading and permalink for Example 1.42: Pivot Positions" aria-label="Copy heading and permalink for Example 1.42: Pivot Positions">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 1.46: Pivot Positions"><a tabindex="-1" href="#pivot-pos-eg" title="Copy heading and permalink for Example 1.46: Pivot Positions" aria-label="Copy heading and permalink for Example 1.46: Pivot Positions">🔗</a></div>
 </article></details>
 <details id="row-reduction-eg-inconsistent" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.43</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">An Inconsistent System.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.47</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">An Inconsistent System.</span>
 </h3></summary>
 <article class="example example-like knowl__content">
 <div class="para logical" id="row-reduction-eg-inconsistent-2-1">
@@ -1215,25 +1227,25 @@ A = \left(\begin{array}{rrr|r}
 \color{highlight}1 \amp 5 \amp {-\frac 12} \\
 3 \amp {15} \amp 2
 \end{array}\right)
-\amp\amp\color{blue}\text{(Step 1b)}\\
+\,\color{contrastBlue}\text{(Step 1b)}\\
 {}\quad\xrightarrow{R_2=R_2-3R_1}\quad
 \amp\left(\begin{array}{rr|r}
 1 \amp 5 \amp {-\frac 12} \\
 \color{highlight}0 \amp 0 \amp \frac72
 \end{array}\right)
-\amp\amp\color{blue}\text{(Step 1c)}\\
+\,\color{contrastBlue}\text{(Step 1c)}\\
 {}\quad\xrightarrow{R_2=R_2\times\frac 27}\quad
 \amp\left(\begin{array}{rr|r}
 1 \amp 5 \amp {-\frac 12} \\
 0 \amp 0 \amp \color{highlight}1
 \end{array}\right)
-\amp\amp\color{blue}\text{(Step 2b)}\\
+\,\color{contrastBlue}\text{(Step 2b)}\\
 {}\quad\xrightarrow{R_1=R_1+\frac 12R_2}\quad
 \amp\left(\begin{array}{rr|r}
 1 \amp 5 \amp \color{highlight}0 \\
 0 \amp 0 \amp 1
 \end{array}\right)
-\amp\amp\color{blue}\text{(Step 2c)}
+\,\color{contrastBlue}\text{(Step 2c)}
 \end{align*}
 </div>
 <div class="para">This row reduced matrix corresponds to the <em class="emphasis">inconsistent</em> system</div>
@@ -1247,19 +1259,19 @@ x \amp {}+{} \amp 5y \amp {}={} \amp 0 \amp {} \\
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-eg-inconsistent-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Solution 1.43.1"><a tabindex="-1" href="#row-reduction-eg-inconsistent-3" title="Copy heading and permalink for Solution 1.43.1" aria-label="Copy heading and permalink for Solution 1.43.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 1.47.1"><a tabindex="-1" href="#row-reduction-eg-inconsistent-3" title="Copy heading and permalink for Solution 1.47.1" aria-label="Copy heading and permalink for Solution 1.47.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Example 1.43: An Inconsistent System"><a tabindex="-1" href="#row-reduction-eg-inconsistent" title="Copy heading and permalink for Example 1.43: An Inconsistent System" aria-label="Copy heading and permalink for Example 1.43: An Inconsistent System">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 1.47: An Inconsistent System"><a tabindex="-1" href="#row-reduction-eg-inconsistent" title="Copy heading and permalink for Example 1.47: An Inconsistent System" aria-label="Copy heading and permalink for Example 1.47: An Inconsistent System">🔗</a></div>
 </article></details>
 <div class="para" id="row-reduction-6-15">In the above example, we saw how to recognize the reduced row echelon form of an inconsistent system.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-6-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="row-reduction-6-16"><h3 class="heading">
-<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.44</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Row Echelon Form of an Inconsistent System.</span>
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.48</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Row Echelon Form of an Inconsistent System.</span>
 </h3>
 <div class="para" id="row-reduction-6-16-3">An augmented matrix corresponds to an inconsistent system of equations if and only if the last column (i.e., the augmented column) is a <em class="emphasis">pivot column</em>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-6-16-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Theorem 1.44: The Row Echelon Form of an Inconsistent System"><a tabindex="-1" href="#row-reduction-6-16" title="Copy heading and permalink for Theorem 1.44: The Row Echelon Form of an Inconsistent System" aria-label="Copy heading and permalink for Theorem 1.44: The Row Echelon Form of an Inconsistent System">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 1.48: The Row Echelon Form of an Inconsistent System"><a tabindex="-1" href="#row-reduction-6-16" title="Copy heading and permalink for Theorem 1.48: The Row Echelon Form of an Inconsistent System" aria-label="Copy heading and permalink for Theorem 1.48: The Row Echelon Form of an Inconsistent System">🔗</a></div>
 </article>
 <div class="para logical" id="row-reduction-6-17">
 <div class="para">In other words, the row reduced matrix of an inconsistent system looks like this:</div>
@@ -1317,7 +1329,7 @@ x \amp {}+{} \amp 5y \amp {}={} \amp 0 \amp {} \\
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-6-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <details id="row-reduction-6-19" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.45</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A System with Many Solutions.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.49</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A System with Many Solutions.</span>
 </h3></summary>
 <article class="example example-like knowl__content">
 <div class="para logical" id="row-reduction-6-19-2-1">
@@ -1348,25 +1360,25 @@ x \amp {}+{} \amp 2y \amp {}+{} \amp 9z \amp {}={} \amp -1 \amp {}
 \color{highlight}1 \amp 2 \amp 9 \amp -1 \\
 2 \amp 1 \amp 12 \amp 1
 \end{array}\right)
-\amp\amp\color{blue}\text{(Optional)}\\
+\,\color{contrastBlue}\text{(Optional)}\\
 {}\quad\xrightarrow{R_2=R_2-2R_1}\quad
 \amp\left(\begin{array}{rrr|r}
 1 \amp 2 \amp 9 \amp -1 \\
 \color{highlight}0 \amp -3 \amp -6 \amp 3
 \end{array}\right)
-\amp\amp\color{blue}\text{(Step 1c)}\\
+\,\color{contrastBlue}\text{(Step 1c)}\\
 {}\quad\xrightarrow{R_2=R_2\div -3}\quad
 \amp\left(\begin{array}{rrr|r}
 1 \amp 2 \amp 9 \amp -1 \\
 0 \amp \color{highlight}1 \amp 2 \amp -1
 \end{array}\right)
-\amp\amp\color{blue}\text{(Step 2b)}\\
+\,\color{contrastBlue}\text{(Step 2b)}\\
 {}\quad\xrightarrow{R_1=R_1-2R_2}\quad
 \amp\left(\begin{array}{rrr|r}
 1 \amp \color{highlight}0 \amp 5 \amp 1 \\
 0 \amp 1 \amp 2 \amp -1
 \end{array}\right)
-\amp\amp\color{blue}\text{(Step 2c)}
+\,\color{contrastBlue}\text{(Step 2c)}
 \end{align*}
 </div>
 <div class="para">This row reduced matrix corresponds to the linear system</div>
@@ -1381,10 +1393,10 @@ y \amp {}+{} \amp 2z \amp {}={} \amp -1. \amp {}
 <div class="para">In what sense is the system solved?  We will see in <a href="parametric-form.html" class="internal" title="Section 1.3: Parametric Form">Section 1.3</a>.</div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-6-19-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Solution 1.45.1"><a tabindex="-1" href="#row-reduction-6-19-3" title="Copy heading and permalink for Solution 1.45.1" aria-label="Copy heading and permalink for Solution 1.45.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 1.49.1"><a tabindex="-1" href="#row-reduction-6-19-3" title="Copy heading and permalink for Solution 1.49.1" aria-label="Copy heading and permalink for Solution 1.49.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Example 1.45: A System with Many Solutions"><a tabindex="-1" href="#row-reduction-6-19" title="Copy heading and permalink for Example 1.45: A System with Many Solutions" aria-label="Copy heading and permalink for Example 1.45: A System with Many Solutions">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 1.49: A System with Many Solutions"><a tabindex="-1" href="#row-reduction-6-19" title="Copy heading and permalink for Example 1.49: A System with Many Solutions" aria-label="Copy heading and permalink for Example 1.49: A System with Many Solutions">🔗</a></div>
 </article></details><div class="autopermalink" aria-hidden="true" data-description="Subsection 1.2.3: The Row Reduction Algorithm"><a tabindex="-1" href="#row-reduction-6" title="Copy heading and permalink for Subsection 1.2.3: The Row Reduction Algorithm" aria-label="Copy heading and permalink for Subsection 1.2.3: The Row Reduction Algorithm">🔗</a></div>
 </section><div class="autopermalink" aria-hidden="true" data-description="Section 1.2: Row Reduction"><a tabindex="-1" href="#row-reduction" title="Copy heading and permalink for Section 1.2: Row Reduction" aria-label="Copy heading and permalink for Section 1.2: Row Reduction">🔗</a></div>
 </section>

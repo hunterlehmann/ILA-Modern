@@ -19,6 +19,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="_static/pretext/fonts/material-symbols-outlined.css">
 <link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<style>
+@counter-style ptx-marker-1 { system: extends upper-alpha; prefix: ''; suffix: '. '; }
+</style>
 <script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
 startMathJax({
 hasWebworkReps: false,
@@ -30,9 +33,9 @@ lang: "en-US",
 </script><script defer data-pretext-mathjax="true" onerror="this.dataset.loadFailed = 'true';" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
-<meta name="twitter:title" content="Interactive Linear Algebra">
-<meta property="og:title" content="Interactive Linear Algebra">
-<meta property="book:title" content="Interactive Linear Algebra">
+<meta name="twitter:title" content="Interactive Linear Algebra: Updated Edition">
+<meta property="og:title" content="Interactive Linear Algebra: Updated Edition">
+<meta property="book:title" content="Interactive Linear Algebra: Updated Edition">
 <meta name="twitter:card" content="summary">
 <script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.55"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.55"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
@@ -73,11 +76,11 @@ eBookConfig.enable_chatcodes =  false;
 <body class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner">
 <a id="logo-link" class="logo-link" target="_blank" href="https://gatech.edu/"><img src="external/images/logo.gif" alt="Logo image"></a><div class="title-container">
-<div class="heading ptx-banner-heading"><a href="main.html"><span class="title">Interactive Linear Algebra</span></a></div>
+<div class="heading ptx-banner-heading"><a href="main.html"><span class="title">Interactive Linear Algebra: Updated Edition</span></a></div>
 <p class="byline">Dan Margalit, Joseph Rabinoff</p>
 </div>
 </div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
-<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-3.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="ptx-search-box">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-4.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="ptx-search-box">
 <div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
 <input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
@@ -115,8 +118,14 @@ eBookConfig.enable_chatcodes =  false;
 <legend>Assistive technologies</legend>
 <label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
 </fieldset>
-<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="backmatter.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="backmatter.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter-3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="backmatter.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="backmatter.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="appendix-gfdl.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{mathtools}\require{color}    \definecolor{highlight}{RGB}{168, 101, 0}
+    \definecolor{contrastGreen}{RGB}{67, 130, 62}
+    \definecolor{contrastPurple}{RGB}{160, 89, 171}
+    \definecolor{contrastBlue}{RGB}{76, 143, 255}
+    \newcommand{\g}{\color{contrastGreen}}
+    \newcommand{\cp}{\color{contrastPurple}}
+    \newcommand{\b}{\color{contrastBlue}}
     \renewcommand{\r}{\color{highlight}}
   \newcommand{\R}{\mathbf R}
   \newcommand{\C}{\mathbf C}
@@ -154,8 +163,8 @@ eBookConfig.enable_chatcodes =  false;
 
 \definecolor{seq-red}{rgb}{0.8941,0.1020,0.1098}
 \definecolor{seq-blue}{rgb}{0.2157,0.4941,0.7216}
-\definecolor{seq-green}{rgb}{0.3020,0.6863,0.2902}
-\definecolor{seq-violet}{rgb}{0.5961,0.3059,0.6392}
+\definecolor{seq-green}{RGB}{67, 130, 62}
+\definecolor{seq-violet}{RGB}{160, 89, 171}
 \definecolor{seq-orange}{rgb}{1.0000,0.4980,0.0000}
 \definecolor{seq-yellow}{rgb}{0.7000,0.7000,0.0000}
 \definecolor{seq-brown}{rgb}{0.6510,0.3373,0.1569}
@@ -177,6 +186,7 @@ eBookConfig.enable_chatcodes =  false;
 <ul id="ptx-toc-group-frontmatter-4" class="structural toc-item-list"><li class="toc-item toc-contributors"><div class="toc-title-box"><a href="frontmatter-4.html#frontmatter-4-2" class="internal"><span class="title"></span></a></div></li></ul>
 </li>
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Variants of this textbook</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-6.html" class="internal"><span class="title">History of the Updated Edition</span></a></div></li>
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="overview.html" class="internal"><span class="title">Overview</span></a></div></li>
 </ul>
 </li>
@@ -189,6 +199,7 @@ eBookConfig.enable_chatcodes =  false;
 <ul id="ptx-toc-group-systems-of-eqns" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="systems-of-eqns.html#subsection-Rn" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Line, Plane, Space, Etc.</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="systems-of-eqns.html#systems-eqns-pictures" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Pictures of Solution Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="systems-of-eqns.html#systems-of-eqns-6" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Parametric Description of Solution Sets</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -211,8 +222,9 @@ eBookConfig.enable_chatcodes =  false;
 <div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
 <ul class="structural toc-item-list contains-active" id="ptx-toc-group-backmatter">
 <li class="toc-item toc-appendix active"><div class="toc-title-box"><a href="backmatter-2.html" class="internal"><span class="codenumber">A.</span> <span class="title">Notation</span></a></div></li>
-<li class="toc-item toc-index"><div class="toc-title-box"><a href="backmatter-3.html" class="internal"><span class="title">Index</span></a></div></li>
-<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-4.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-gfdl.html" class="internal"><span class="codenumber">B.</span> <span class="title">GNU Free Documentation License</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="backmatter-4.html" class="internal"><span class="title">Index</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-5.html" class="internal"><span class="title">Colophon</span></a></div></li>
 </ul>
 </li>
 </ul></nav></div>
@@ -254,7 +266,7 @@ eBookConfig.enable_chatcodes =  false;
 </section>
 </div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<a class="previous-button button" href="backmatter.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter-3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="backmatter.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="appendix-gfdl.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
