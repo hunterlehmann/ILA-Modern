@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Overview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="_static/pretext/fonts/material-symbols-outlined.css">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+lang: "en-US",
+});
+</script><script defer data-pretext-mathjax="true" onerror="this.dataset.loadFailed = 'true';" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="Interactive Linear Algebra">
+<meta property="og:title" content="Interactive Linear Algebra">
+<meta property="book:title" content="Interactive Linear Algebra">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.55"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.55"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.3.4';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.7e4cb14f24eb489b.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.54371ed119fe41be.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.40d828091d93b733.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><link rel="icon" type="image/png" sizes="32x32" href="external/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="external/favicon/favicon-16x16.png">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href="https://gatech.edu/"><img src="external/images/logo.gif" alt="Logo image"></a><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="main.html"><span class="title">Interactive Linear Algebra</span></a></div>
+<p class="byline">Dan Margalit, Joseph Rabinoff</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-3.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf1bc;</span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
+<button id="ptx-read-aloud-prev" class="button" title="Previous sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe045;</span></button><button id="ptx-read-aloud-toggle" class="ptx-read-aloud-toggle button" title="Play"><span class="ptx-read-aloud-icon-play"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></span><span class="ptx-read-aloud-icon-pause"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe034;</span></span></button><button id="ptx-read-aloud-next" class="button" title="Next sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe044;</span></button><a id="ptx-read-aloud-continue" class="ptx-read-aloud-continue button" hidden="hidden">Continue<span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></a><button id="ptx-read-aloud-settings-button" class="ptx-read-aloud-settings-button button" title="Reading settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe429;</span></button>
+</div>
+<dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Read aloud settings</h2>
+<button class="ptx-read-aloud-settings-close-button button" id="ptx-read-aloud-settings-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label for="ptx-read-aloud-voice"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe91f;</span><span>Voice</span></label><select id="ptx-read-aloud-voice"></select><label class="ptx-readability-slider-label" for="ptx-read-aloud-rate"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe9e4;</span><span>Reading speed</span><output id="ptx-read-aloud-rate-value" for="ptx-read-aloud-rate">1×</output></label><input type="range" id="ptx-read-aloud-rate" min="0.5" max="2" step="0.1" value="1"><label for="ptx-read-aloud-asides"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d7;</span><span>Collapsed content</span></label><select id="ptx-read-aloud-asides"><option value="skip">Announce, do not read</option>
+<option value="read">Read automatically</option></select><label for="ptx-read-aloud-autoscroll"><input type="checkbox" id="ptx-read-aloud-autoscroll" checked><span>Follow along (auto-scroll)</span></label><label for="ptx-read-aloud-autocontinue"><input type="checkbox" id="ptx-read-aloud-autocontinue"><span>Continue to the next page automatically</span></label>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="frontmatter-5.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="frontmatter.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="chap-algebra.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{mathtools}\require{color}    \definecolor{highlight}{RGB}{168, 101, 0}
+    \renewcommand{\r}{\color{highlight}}
+  \newcommand{\R}{\mathbf R}
+  \newcommand{\C}{\mathbf C}
+ \renewcommand{\mathbb}[1]{\mathbf{#1}}
+  
+  \newcommand{\Span}{\operatorname{Span}}
+  \newcommand{\Nul}{\operatorname{Nul}}
+  \newcommand{\Col}{\operatorname{Col}}
+  \newcommand{\Row}{\operatorname{Row}}
+  \newcommand{\rank}{\operatorname{rank}}
+  \newcommand{\nullity}{\operatorname{nullity}}
+  \newcommand{\Id}{\operatorname{Id}}
+  \newcommand{\Tr}{\operatorname{Tr}}
+  \newcommand{\adj}{\operatorname{adj}}
+  \renewcommand{\Re}{\operatorname{Re}}
+  \renewcommand{\Im}{\operatorname{Im}}
+  \newcommand{\dist}{\operatorname{dist}}
+  \newcommand{\refl}{\operatorname{ref}}
+  \newcommand{\inv}{^{-1}}
+  \newcommand{\To}{\longrightarrow}
+  \newcommand{\rref}{\;\xrightarrow{\text{RREF}}\;}
+  \newcommand{\vol}{\operatorname{vol}}
+  \newcommand{\sptxt}[1]{\quad\text{ #1 }\quad}
+  \renewcommand{\bar}[1]{\overline{#1}}
+  \renewcommand{\hat}[1]{\widehat{#1}}
+  
+    \newcommand{\cB}{{\mathcal B}}
+  
+  \newcommand{\leading}[1]{\color{red}#1}
+  \newcommand{\setof}[1]{\left\{#1\right\}}
+  
+  \newenvironment{smm}{\left(\begin{smallmatrix}}
+                      {\end{smallmatrix}\right)}
+\newcommand\smallmat[4]{\begin{smm}#1&amp;#2\\#3&amp;#4\end{smm}}
+
+\definecolor{seq-red}{rgb}{0.8941,0.1020,0.1098}
+\definecolor{seq-blue}{rgb}{0.2157,0.4941,0.7216}
+\definecolor{seq-green}{rgb}{0.3020,0.6863,0.2902}
+\definecolor{seq-violet}{rgb}{0.5961,0.3059,0.6392}
+\definecolor{seq-orange}{rgb}{1.0000,0.4980,0.0000}
+\definecolor{seq-yellow}{rgb}{0.7000,0.7000,0.0000}
+\definecolor{seq-brown}{rgb}{0.6510,0.3373,0.1569}
+\definecolor{seq-pink}{rgb}{0.9686,0.5059,0.7490}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter contains-active">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-frontmatter">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-preface">
+<div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Contributors to this textbook</span></a></div>
+<ul id="ptx-toc-group-frontmatter-4" class="structural toc-item-list"><li class="toc-item toc-contributors"><div class="toc-title-box"><a href="frontmatter-4.html#frontmatter-4-2" class="internal"><span class="title"></span></a></div></li></ul>
+</li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Variants of this textbook</span></a></div></li>
+<li class="toc-item toc-preface active"><div class="toc-title-box"><a href="overview.html" class="internal"><span class="title">Overview</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-algebra.html" class="internal"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations: Algebra</span></a></div>
+<ul id="ptx-toc-group-chap-algebra" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="chap-algebra-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="systems-of-eqns.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Systems of Linear Equations</span></a></div>
+<ul id="ptx-toc-group-systems-of-eqns" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="systems-of-eqns.html#subsection-Rn" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Line, Plane, Space, Etc.</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="systems-of-eqns.html#systems-eqns-pictures" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Pictures of Solution Sets</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="row-reduction.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Row Reduction</span></a></div>
+<ul id="ptx-toc-group-row-reduction" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="row-reduction.html#row-reduction-elimination" class="internal"><span class="codenumber">1.2.1</span> <span class="title">The Elimination Method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="row-reduction.html#row-reduction-echelon-forms" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Echelon Forms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="row-reduction.html#row-reduction-6" class="internal"><span class="codenumber">1.2.3</span> <span class="title">The Row Reduction Algorithm</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="parametric-form.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Parametric Form</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap-geometry.html" class="internal"><span class="codenumber">2</span> <span class="title">Systems of Linear Equations: Geometry</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap-matrices.html" class="internal"><span class="codenumber">3</span> <span class="title">Linear Transformations and Matrix Algebra</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap-determinant.html" class="internal"><span class="codenumber">4</span> <span class="title">Determinants</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap-eigenvalues.html" class="internal"><span class="codenumber">5</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap-orthogonality.html" class="internal"><span class="codenumber">6</span> <span class="title">Orthogonality</span></a></div></li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul id="ptx-toc-group-backmatter" class="structural toc-item-list">
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="backmatter-2.html" class="internal"><span class="codenumber">A.</span> <span class="title">Notation</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="backmatter-3.html" class="internal"><span class="title">Index</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-4.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="preface" id="overview">
+<h1 class="heading hide-type">
+<span class="type">Preface</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Overview</span>
+</h1>
+<section class="paragraphs" id="overview-2"><h2 class="heading"><span class="title">The Subject of This Textbook.</span></h2>
+<div class="para logical" id="overview-2-2">
+<div class="para">Before starting with the content of the text, we first ask the basic question: what <em class="emphasis">is</em> linear algebra?</div>
+<ul class="disc" id="overview-2-2-2">
+<li id="overview-2-2-2-1">
+<div class="para" id="p-derived-overview-2-2-2-1">
+<em class="emphasis">Linear:</em> having to do with lines, planes, etc.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#overview-2-2-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="overview-2-2-2-2">
+<div class="para" id="p-derived-overview-2-2-2-2">
+<em class="emphasis">Algebra:</em> solving equations involving unknowns.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#overview-2-2-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">The name of the textbook highlights an important theme: the synthesis between algebra and geometry. It will be very important to us to understand systems of linear equations both <em class="emphasis">algebraically</em> (writing equations for their solutions) and <em class="emphasis">geometrically</em> (drawing pictures and visualizing).</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#overview-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="overview-2-3" class="problem example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary>
+<article class="problem example-like knowl__content">
+<div class="para" id="overview-2-3-1">The term “algebra” was coined by the <span class="process-math">\(9\)</span> th century mathematician Abu Ja ’ far Muhammad ibn Musa al-Khwarizmi. It comes from the Arabic word <em class="emphasis">al-jebr</em>, meaning reunion of broken parts.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#overview-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 0.1"><a tabindex="-1" href="#overview-2-3" title="Copy heading and permalink for Remark 0.1" aria-label="Copy heading and permalink for Remark 0.1">🔗</a></div>
+</article></details>
+<div class="para logical" id="overview-2-4">
+<div class="para">At the simplest level, solving a system of linear equations is not very hard. You probably learned in high school how to solve a system like</div>
+<div class="displaymath process-math" id="overview-2-4-1">
+\begin{equation*}
+\left\{
+\begin{alignedat}{4}
+x &amp;{}+{}&amp;  3y &amp;{}-{}&amp;   z &amp;{}={}&amp;   4, \\
+2x &amp;{}-{}&amp;   y &amp;{}+{}&amp;  3z &amp;{}={}&amp;  17, \\
+&amp;             &amp;   y &amp;{}-{}&amp;  4z &amp;{}={}&amp;  -3.
+\end{alignedat}
+\right.
+\end{equation*}
+</div>
+<div class="para">However, in real life one usually has to be more clever.</div>
+<ul class="disc" id="overview-2-4-2">
+<li id="overview-2-4-2-1">
+<div class="para" id="p-derived-overview-2-4-2-1">Engineers need to solve many, many equations in many, many variables. Here is a tiny example:<div class="displaymath process-math" id="overview-2-4-2-1-1">
+\begin{equation*}
+\left\{
+\begin{alignedat}{7}
+3x_1            &amp;{}+{}&amp;  4x_2 &amp;{}+{}&amp;  10x_3            &amp;{}+{}&amp;  19x_4 &amp;{}-{}&amp;   2x_5 &amp;{}-{}&amp;   3x_6 &amp;{}={}&amp;   141, \\
+7x_1            &amp;{}+{}&amp;  2x_2 &amp;{}-{}&amp;  13x_3            &amp;{}-{}&amp;   7x_4 &amp;{}+{}&amp;  21x_5 &amp;{}+{}&amp;   8x_6 &amp;{}={}&amp;  2567, \\
+-x_1           &amp;{}+{}&amp;  9x_2 &amp;{}+{}&amp;  \tfrac{3}{2}x_3 &amp;{}+{}&amp;     x_4 &amp;{}+{}&amp;  14x_5 &amp;{}+{}&amp;  27x_6 &amp;{}={}&amp;    26, \\
+\tfrac{1}{2}x_1 &amp;{}+{}&amp;  4x_2 &amp;{}+{}&amp;  10x_3            &amp;{}+{}&amp;  11x_4 &amp;{}+{}&amp;   2x_5 &amp;{}+{}&amp;     x_6 &amp;{}={}&amp;   -15.
+\end{alignedat}
+\right.
+\end{equation*}
+</div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#overview-2-4-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="overview-2-4-2-2">
+<div class="para" id="p-derived-overview-2-4-2-2">Often it is enough to know some information about the set of solutions, without having to solve the equations in the first place. For instance, does there exist a solution? What does the solution set look like geometrically? Is there still a solution if we change the <span class="process-math">\(26\)</span> to a <span class="process-math">\(27\text{?}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#overview-2-4-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="overview-2-4-2-3">
+<div class="para" id="p-derived-overview-2-4-2-3">Sometimes the coefficients also contain parameters, like the <em class="emphasis">eigenvalue equation</em><div class="displaymath process-math" id="overview-2-4-2-3-2">
+\begin{equation*}
+\left\{
+\begin{alignedat}{4}
+(7-\lambda)x &amp;{}+{}&amp;              y &amp;{}+{}&amp;  3z                  &amp;{}={}&amp;  0, \\
+-3x &amp;{}+{}&amp;  (2-\lambda)y &amp;{}-{}&amp;  3z                  &amp;{}={}&amp;  0, \\
+-3x &amp;{}-{}&amp;             2y &amp;{}+{}&amp;  (-1-\lambda)z &amp;{}={}&amp;  0.
+\end{alignedat}
+\right.
+\end{equation*}
+</div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#overview-2-4-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="overview-2-4-2-4">
+<div class="para" id="p-derived-overview-2-4-2-4">In data modeling, a system of equations generally does not actually have a solution. In that case, what is the best approximate solution?</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#overview-2-4-2-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#overview-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="overview-2-5">
+<div class="para">Accordingly, this text is organized into three main sections.</div>
+<ol class="decimal" id="overview-2-5-1">
+<li id="overview-2-5-1-1">
+<div class="para logical" id="overview-2-5-1-1-1">
+<div class="para">Solve the matrix equation <span class="process-math">\(Ax=b\)</span> (chapters 2 – 4).</div>
+<ul class="disc" id="overview-2-5-1-1-1-3">
+<li id="overview-2-5-1-1-1-3-1">
+<div class="para" id="p-derived-overview-2-5-1-1-1-3-1">Solve systems of linear equations using matrices, row reduction, and inverses.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#overview-2-5-1-1-1-3-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="overview-2-5-1-1-1-3-2">
+<div class="para" id="p-derived-overview-2-5-1-1-1-3-2">Analyze systems of linear equations geometrically using the geometry of solution sets and linear transformations.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#overview-2-5-1-1-1-3-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#overview-2-5-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#overview-2-5-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="overview-2-5-1-2">
+<div class="para logical" id="overview-2-5-1-2-1">
+<div class="para">Solve the matrix equation <span class="process-math">\(Ax=\lambda x\)</span> (chapters 5 – 6).</div>
+<ul class="disc" id="overview-2-5-1-2-1-3">
+<li id="overview-2-5-1-2-1-3-1">
+<div class="para" id="p-derived-overview-2-5-1-2-1-3-1">Solve eigenvalue problems using the characteristic polynomial.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#overview-2-5-1-2-1-3-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="overview-2-5-1-2-1-3-2">
+<div class="para" id="p-derived-overview-2-5-1-2-1-3-2">Understand the geometry of matrices using similarity, eigenvalues, diagonalization, and complex numbers.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#overview-2-5-1-2-1-3-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#overview-2-5-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#overview-2-5-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="overview-2-5-1-3">
+<div class="para logical" id="overview-2-5-1-3-1">
+<div class="para">Approximately solve the matrix equation <span class="process-math">\(Ax=b\)</span> (chapter 7).</div>
+<ul class="disc" id="overview-2-5-1-3-1-2">
+<li id="overview-2-5-1-3-1-2-1">
+<div class="para" id="p-derived-overview-2-5-1-3-1-2-1">Find best-fit solutions to systems of linear equations that have no actual solution using least-squares approximations.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#overview-2-5-1-3-1-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="overview-2-5-1-3-1-2-2">
+<div class="para" id="p-derived-overview-2-5-1-3-1-2-2">Study the geometry of closest vectors and orthogonal projections.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#overview-2-5-1-3-1-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#overview-2-5-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#overview-2-5-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#overview-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="overview-2-6">This text is roughly half computational and half conceptual in nature. The main goal is to present a library of linear algebra tools, and more importantly, to teach a conceptual framework for understanding which tools should be applied in a given context.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#overview-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="insight remark-like" id="overview-2-7"><h3 class="heading">
+<span class="type">Insight</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="overview-2-7-1">If Matlab can find the answer faster than you can, then your question is just an algorithm: this is not real problem solving.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#overview-2-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Insight 0.2"><a tabindex="-1" href="#overview-2-7" title="Copy heading and permalink for Insight 0.2" aria-label="Copy heading and permalink for Insight 0.2">🔗</a></div>
+</article>
+<div class="para" id="overview-2-8">The subtle part of the subject lies in understanding <em class="emphasis">what computation to ask the computer to do for you</em> — it is far less important to know how to perform computations that a computer can do better than you anyway.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#overview-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraphs: The Subject of This Textbook"><a tabindex="-1" href="#overview-2" title="Copy heading and permalink for Paragraphs: The Subject of This Textbook" aria-label="Copy heading and permalink for Paragraphs: The Subject of This Textbook">🔗</a></div>
+</section>
+<section class="paragraphs" id="overview-3"><h2 class="heading"><span class="title">Uses of Linear Algebra in Engineering.</span></h2>
+<div class="para" id="overview-3-2">The vast majority of undergraduates at Georgia Tech have to take a course in linear algebra. There is a reason for this:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#overview-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="insight remark-like" id="overview-3-3"><h3 class="heading">
+<span class="type">Insight</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="overview-3-3-1">
+<div class="para">Most engineering problems, no matter how complicated, can be reduced to linear algebra:</div>
+<div class="displaymath process-math" id="overview-3-3-1-1">
+\begin{equation*}
+Ax=b \sptxt{or} Ax=\lambda x \sptxt{or} Ax\approx b.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#overview-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Insight 0.3"><a tabindex="-1" href="#overview-3-3" title="Copy heading and permalink for Insight 0.3" aria-label="Copy heading and permalink for Insight 0.3">🔗</a></div>
+</article>
+<div class="para" id="overview-3-4">Here we present some sample problems in science and engineering that require linear algebra to solve.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#overview-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="observation remark-like" id="overview-3-5"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Civil Engineering.</span>
+</h3>
+<div class="para" id="overview-3-5-2">The following diagram represents traffic flow around the town square. The streets are all one way, and the numbers and arrows indicate the number of cars per hour flowing along each street, as measured by sensors underneath the roads.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#overview-3-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;">
+<img src="generated/latex-image/traffic-flow-diagram.svg" role="img" class="contained" alt="Directed traffic flows into, out of, and around a square formed by four intersections."><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="traffic-flow-diagram-description">
+<div class="para" id="traffic-flow-diagram-2-1">Four intersections form the corners of a square. Internal one-way streets carry unknown hourly flows: <span class="process-math">\(x\)</span> across the top from left to right, <span class="process-math">\(y\)</span> down the right side, <span class="process-math">\(z\)</span> across the bottom from right to left, and <span class="process-math">\(w\)</span> up the left side. At the upper-left intersection, 120 cars per hour enter from the left and 250 leave upward. At the upper-right intersection, 120 enter from above and 70 leave to the right. At the lower-right intersection, 530 enter from the right and 390 leave downward. At the lower-left intersection, 115 enter from below and 175 leave to the left.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#traffic-flow-diagram-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div></details>
+</div>
+<div class="para logical" id="overview-3-5-4">
+<div class="para">There are no sensors underneath some of the streets, so we do not know how much traffic is flowing around the square itself. What are the values of <span class="process-math">\(x,y,z,w\text{?}\)</span> Since the number of cars entering each intersection has to equal the number of cars leaving that intersection, we obtain a system of linear equations:</div>
+<div class="displaymath process-math" id="overview-3-5-4-2">
+\begin{equation*}
+\left\{
+\begin{alignedat}{4}
+w &amp;{}+{}&amp;  120 &amp;{}={}&amp;  x &amp;{}+{}&amp;  250, \\
+x &amp;{}+{}&amp;  120 &amp;{}={}&amp;  y &amp;{}+{}&amp;   70, \\
+y &amp;{}+{}&amp;  530 &amp;{}={}&amp;  z &amp;{}+{}&amp;  390, \\
+z &amp;{}+{}&amp;  115 &amp;{}={}&amp;  w &amp;{}+{}&amp;  175.
+\end{alignedat}
+\right.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#overview-3-5-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 0.4: Civil Engineering"><a tabindex="-1" href="#overview-3-5" title="Copy heading and permalink for Example 0.4: Civil Engineering" aria-label="Copy heading and permalink for Example 0.4: Civil Engineering">🔗</a></div>
+</article>
+<article class="observation remark-like" id="overview-3-6"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Chemical Engineering.</span>
+</h3>
+<div class="para logical" id="overview-3-6-2">
+<div class="para">A certain chemical reaction (burning) takes ethane and oxygen, and produces carbon dioxide and water:</div>
+<div class="displaymath process-math" id="overview-3-6-2-1">
+\begin{equation*}
+\underline{\hphantom{0}x\hphantom{0}}\,\mathrm{C}_2\mathrm{H}_6
++ \underline{\hphantom{0}y\hphantom{0}}\,\mathrm{O}_2
+\longrightarrow
+\underline{\hphantom{0}z\hphantom{0}}\,\mathrm{CO}_2
++ \underline{\hphantom{0}w\hphantom{0}}\,\mathrm{H}_2\mathrm{O}.
+\end{equation*}
+</div>
+<div class="para">What ratio of the molecules is needed to sustain the reaction? The following three equations come from the fact that the number of atoms of carbon, hydrogen, and oxygen on the left side has to equal the number of atoms on the right, respectively:</div>
+<div class="displaymath process-math" id="overview-3-6-2-2">
+\begin{align*}
+2x &amp;  = z\\
+6x &amp;= 2w\\
+2y &amp;= 2z+ w\text{.}
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#overview-3-6-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 0.5: Chemical Engineering"><a tabindex="-1" href="#overview-3-6" title="Copy heading and permalink for Example 0.5: Chemical Engineering" aria-label="Copy heading and permalink for Example 0.5: Chemical Engineering">🔗</a></div>
+</article>
+<article class="observation remark-like" id="overview-3-7"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.6</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Biology.</span>
+</h3>
+<div class="para logical" id="overview-3-7-2">
+<div class="para">In a population of rabbits,</div>
+<ol class="decimal" id="overview-3-7-2-1">
+<li id="overview-3-7-2-1-1">
+<div class="para" id="overview-3-7-2-1-1-1">half of the newborn rabbits survive their first year;<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#overview-3-7-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#overview-3-7-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="overview-3-7-2-1-2">
+<div class="para" id="overview-3-7-2-1-2-1">of those, half survive their second year;<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#overview-3-7-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#overview-3-7-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="overview-3-7-2-1-3">
+<div class="para" id="overview-3-7-2-1-3-1">the maximum life span is three years;<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#overview-3-7-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#overview-3-7-2-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="overview-3-7-2-1-4">
+<div class="para" id="overview-3-7-2-1-4-1">rabbits produce 0, 6, 8 baby rabbits in their first, second, and third years, respectively.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#overview-3-7-2-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 4"><a tabindex="-1" href="#overview-3-7-2-1-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+</ol>
+<div class="para">If you know the rabbit population in 2016 (in terms of the number of first, second, and third year rabbits), then what is the population in 2017? The rules for reproduction lead to the following system of equations, where <span class="process-math">\(x,y,z\)</span> represent the number of newborn, first-year, and second-year rabbits, respectively:</div>
+<div class="displaymath process-math" id="overview-3-7-2-3">
+\begin{equation*}
+\left\{
+\begin{alignedat}{4}
+&amp;             &amp;  6y_{2016}            &amp;{}+{}&amp;  8z_{2016} &amp;{}={}&amp;  x_{2017}, \\
+\tfrac{1}{2}x_{2016} &amp;             &amp;                      &amp;             &amp;            &amp;{}={}&amp;  y_{2017}, \\
+&amp;             &amp;  \tfrac{1}{2}y_{2016} &amp;             &amp;            &amp;{}={}&amp;  z_{2017}.
+\end{alignedat}
+\right.
+\end{equation*}
+</div>
+<div class="para">A common question is: what is the <em class="emphasis">asymptotic</em> behavior of this system? What will the rabbit population look like in 100 years? This turns out to be an eigenvalue problem.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#overview-3-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="overview-3-7-3"><figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Left: the population of rabbits in a given year. Right: the proportions of rabbits in that year. Choose any values you like for the starting population, and click “Advance 1 year” several times. What do you notice about the long-term behavior of the ratios? This phenomenon turns out to be due to eigenvectors.<div class="autopermalink" aria-hidden="true" data-description="Figure 0.7"><a tabindex="-1" href="#overview-3-7-3" title="Copy heading and permalink for Figure 0.7" aria-label="Copy heading and permalink for Figure 0.7">🔗</a></div></figcaption>
+</figure><div class="autopermalink" aria-hidden="true" data-description="Example 0.6: Biology"><a tabindex="-1" href="#overview-3-7" title="Copy heading and permalink for Example 0.6: Biology" aria-label="Copy heading and permalink for Example 0.6: Biology">🔗</a></div>
+</article>
+<article class="observation remark-like" id="overview-3-8"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.8</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Astronomy.</span>
+</h3>
+<div class="para logical" id="overview-3-8-2">
+<div class="para">An asteroid has been observed at the following locations:</div>
+<div class="displaymath process-math" id="overview-3-8-2-1">
+\begin{equation*}
+(0,2),\, (2,1),\, (1,-1),\, (-1,-2),\, (-3,1),\, (-1,-1).
+\end{equation*}
+</div>
+<div class="para">Its orbit around the sun is elliptical; it is described by an equation of the form</div>
+<div class="displaymath process-math" id="overview-3-8-2-2">
+\begin{equation*}
+x^2 + By^2 + Cxy + Dx + Ey + F = 0.
+\end{equation*}
+</div>
+<div class="para">What is the most likely orbit of the asteroid, given that there was some significant error in measuring its position? Substituting the data points into the above equation yields the system</div>
+<div class="displaymath process-math" id="overview-3-8-2-3">
+\begin{equation*}
+\begin{alignedat}{7}
+(0)^2    &amp;{}+{}&amp;  B(2)^2    &amp;{}+{}&amp;  C(0)(2)       &amp;{}+{}&amp;  D(0)    &amp;{}+{}&amp;  E(2)    &amp;{}+{}&amp;  F &amp;{}={}&amp;  0, \\
+(2)^2    &amp;{}+{}&amp;  B(1)^2    &amp;{}+{}&amp;  C(2)(1)       &amp;{}+{}&amp;  D(2)    &amp;{}+{}&amp;  E(1)    &amp;{}+{}&amp;  F &amp;{}={}&amp;  0, \\
+(1)^2    &amp;{}+{}&amp;  B(-1)^2   &amp;{}+{}&amp;  C(1)(-1)      &amp;{}+{}&amp;  D(1)    &amp;{}+{}&amp;  E(-1)   &amp;{}+{}&amp;  F &amp;{}={}&amp;  0, \\
+(-1)^2   &amp;{}+{}&amp;  B(-2)^2   &amp;{}+{}&amp;  C(-1)(-2)     &amp;{}+{}&amp;  D(-1)   &amp;{}+{}&amp;  E(-2)   &amp;{}+{}&amp;  F &amp;{}={}&amp;  0, \\
+(-3)^2   &amp;{}+{}&amp;  B(1)^2    &amp;{}+{}&amp;  C(-3)(1)      &amp;{}+{}&amp;  D(-3)   &amp;{}+{}&amp;  E(1)    &amp;{}+{}&amp;  F &amp;{}={}&amp;  0, \\
+(-1)^2   &amp;{}+{}&amp;  B(-1)^2   &amp;{}+{}&amp;  C(-1)(-1)     &amp;{}+{}&amp;  D(-1)   &amp;{}+{}&amp;  E(-1)   &amp;{}+{}&amp;  F &amp;{}={}&amp;  0.
+\end{alignedat}
+\end{equation*}
+</div>
+<div class="para">There is no actual solution to this system due to measurement error, but here is the best-fitting ellipse: <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;">
+<img src="generated/latex-image/asteroid-best-fit-ellipse.svg" role="img" class="contained" alt="Six measured asteroid positions and a red best-fit ellipse on a coordinate grid."><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="asteroid-best-fit-ellipse-description">
+<div class="para" id="asteroid-best-fit-ellipse-2-1">A coordinate grid from <span class="process-math">\(x=-6\)</span> to <span class="process-math">\(x=6\)</span> and <span class="process-math">\(y=-4\)</span> to <span class="process-math">\(y=4\)</span> shows the measured points <span class="process-math">\((0,2)\text{,}\)</span> <span class="process-math">\((2,1)\text{,}\)</span> <span class="process-math">\((1,-1)\text{,}\)</span> <span class="process-math">\((-1,-2)\text{,}\)</span> <span class="process-math">\((-3,1)\text{,}\)</span> and <span class="process-math">\((-1,1)\text{.}\)</span> A tilted red ellipse is fitted to the six points. Its displayed equation is <span class="process-math">\(266x^2+405y^2-178xy+402x-123y-1374=0\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#asteroid-best-fit-ellipse-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div></details>
+</div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#overview-3-8-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 0.8: Astronomy"><a tabindex="-1" href="#overview-3-8" title="Copy heading and permalink for Example 0.8: Astronomy" aria-label="Copy heading and permalink for Example 0.8: Astronomy">🔗</a></div>
+</article>
+<article class="observation remark-like" id="overview-3-9"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.9</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Computer Science.</span>
+</h3>
+<div class="para" id="overview-3-9-2">Each web page has some measure of importance, which it shares via outgoing links to other pages. This leads to zillions of equations in zillions of variables. Larry Page and Sergei Brin realized that this is a linear algebra problem at its core, and used the insight to found Google. We will discuss this example in detail in <code class="code-inline tex2jax_ignore">[provisional cross-reference: stochastic-matrices]</code>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#overview-3-9-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 0.9: Computer Science"><a tabindex="-1" href="#overview-3-9" title="Copy heading and permalink for Example 0.9: Computer Science" aria-label="Copy heading and permalink for Example 0.9: Computer Science">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Paragraphs: Uses of Linear Algebra in Engineering"><a tabindex="-1" href="#overview-3" title="Copy heading and permalink for Paragraphs: Uses of Linear Algebra in Engineering" aria-label="Copy heading and permalink for Paragraphs: Uses of Linear Algebra in Engineering">🔗</a></div>
+</section>
+<section class="paragraphs" id="overview-4"><h2 class="heading"><span class="title">How to Use This Textbook.</span></h2>
+<div class="para logical" id="overview-4-2">
+<div class="para">There are a number of different categories of ideas that are contained in most sections. They are listed at the top of the section, under <em class="emphasis">Objectives</em>, for easy review. We classify them as follows.</div>
+<ul class="disc" id="overview-4-2-2">
+<li id="overview-4-2-2-1">
+<div class="para" id="p-derived-overview-4-2-2-1">
+<em class="emphasis">Recipes:</em> these are algorithms that are generally straightforward (if sometimes tedious), and are usually done by computer in real life. They are nonetheless important to learn and to practice.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#overview-4-2-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="overview-4-2-2-2">
+<div class="para" id="p-derived-overview-4-2-2-2">
+<em class="emphasis">Vocabulary words:</em> forming a conceptual understanding of the subject of linear algebra means being able to communicate much more precisely than in ordinary speech. The vocabulary words have precise definitions, which must be learned and used correctly.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#overview-4-2-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="overview-4-2-2-3">
+<div class="para" id="p-derived-overview-4-2-2-3">
+<em class="emphasis">Essential vocabulary words:</em> these vocabulary words are essential in that they form the essence of the subject of linear algebra. For instance, if you do not know the definition of an eigenvector, then by definition you cannot claim to understand linear algebra.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#overview-4-2-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="overview-4-2-2-4">
+<div class="para" id="p-derived-overview-4-2-2-4">
+<em class="emphasis">Theorems:</em> these describe in a precise way how the objects of interest relate to each other. Knowing which recipe to use in a given situation generally means recognizing which vocabulary words to use to describe the situation, and understanding which theorems apply to that problem.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#overview-4-2-2-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="overview-4-2-2-5">
+<div class="para" id="p-derived-overview-4-2-2-5">
+<em class="emphasis">Pictures:</em> visualizing the geometry underlying the algebra means interpreting and drawing pictures of the objects involved. The pictures are meant to be a core part of the material in the text: they are not just a pretty add-on.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#overview-4-2-2-5" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#overview-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="overview-4-3">This textbook is exclusively targeted at Math 1553 at Georgia Tech. As such, it contains exactly the material that is taught in that class; no more, and no less: <em class="emphasis">students in Math 1553 are responsible for understanding all visible content.</em> In the online version some extra material (most examples and proofs, for instance) is hidden, in that one needs to click on a link to reveal it, like this:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#overview-4-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="overview-4-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.10</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Hidden Content.</span>
+</h3></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="overview-4-4-2">Hidden content is meant to enrich your understanding of the topic, but is not an official part of Math 1553. That said, the text will be very hard to follow without understanding the examples, and studying the proofs is an excellent way to learn the conceptual part of the material. (Not applicable to the PDF version.)<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#overview-4-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 0.10: Hidden Content"><a tabindex="-1" href="#overview-4-4" title="Copy heading and permalink for Example 0.10: Hidden Content" aria-label="Copy heading and permalink for Example 0.10: Hidden Content">🔗</a></div>
+</article></details>
+<div class="para" id="overview-4-5">Finally, we remark that there are over 140 interactive demos contained in the text, which were created to illustrate the geometry of the topic. Click the “view in a new window” link, and play around with them! You will need a modern browser. Internet Explorer is not a modern browser; try Safari, <a class="external" href="https://www.google.com/chrome/browser/desktop/" target="_blank">Chrome</a>, or <a class="external" href="https://www.mozilla.org/en-US/firefox/" target="_blank">Firefox</a>. Here is a demo from <code class="code-inline tex2jax_ignore">[provisional cross-reference: least-squares]</code>:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#overview-4-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="overview-4-6"><figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Click and drag the points on the grid on the right.<div class="autopermalink" aria-hidden="true" data-description="Figure 0.11"><a tabindex="-1" href="#overview-4-6" title="Copy heading and permalink for Figure 0.11" aria-label="Copy heading and permalink for Figure 0.11">🔗</a></div></figcaption>
+</figure>
+<figure class="figure figure-like" id="fig-bestfit-implicit"><div class="interactive-iframe-container"><iframe id="int-bestfit-implicit" style="width:600px; height:300px; display: block; " src="int-bestfit-implicit-if.html"></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="int-bestfit-implicit.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="int-bestfit-implicit-2" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="int-bestfit-implicit-2-1">Drag the blue points in the left-hand (2D) view. The red curve is the zero set of the best-fit function <span class="process-math">\(f(x,y) = x^2 + Ay^2 + Bxy + Cx + Dy + E\text{,}\)</span> and the text shows its coefficients and the quantity minimized, <span class="process-math">\(\sum_i f(x_i,y_i)^2\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#int-bestfit-implicit-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="int-bestfit-implicit-2-2">The right-hand (3D) view shows the graph <span class="process-math">\(z = f(x,y)\)</span> in red; the violet segments are the errors <span class="process-math">\(f(x_i,y_i)\)</span> at the data points. Drag the background of the 3D view to rotate it.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#int-bestfit-implicit-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#int-bestfit-implicit-2" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The implicit equation <span class="process-math">\(x^2 + Ay^2 + Bxy + Cx + Dy + E = 0\)</span> of best fit for six data points, found by least squares.<div class="autopermalink" aria-hidden="true" data-description="Figure 0.12"><a tabindex="-1" href="#fig-bestfit-implicit" title="Copy heading and permalink for Figure 0.12" aria-label="Copy heading and permalink for Figure 0.12">🔗</a></div></figcaption>
+</figure><div class="autopermalink" aria-hidden="true" data-description="Paragraphs: How to Use This Textbook"><a tabindex="-1" href="#overview-4" title="Copy heading and permalink for Paragraphs: How to Use This Textbook" aria-label="Copy heading and permalink for Paragraphs: How to Use This Textbook">🔗</a></div>
+</section>
+<section class="paragraphs" id="overview-5"><h2 class="heading"><span class="title">Feedback.</span></h2>
+<div class="para" id="overview-5-2">Every page of the online version has a link on the bottom for providing feedback. This will take you to the GitHub Issues page for this book. It requires a Georgia Tech login to access.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#overview-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraphs: Feedback"><a tabindex="-1" href="#overview-5" title="Copy heading and permalink for Paragraphs: Feedback" aria-label="Copy heading and permalink for Paragraphs: Feedback">🔗</a></div>
+</section><div class="autopermalink" aria-hidden="true" data-description="Preface: Overview"><a tabindex="-1" href="#overview" title="Copy heading and permalink for Preface: Overview" aria-label="Copy heading and permalink for Preface: Overview">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="frontmatter-5.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chap-algebra.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" alt="Runestone Academy logo" src="data:image/png;base64,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"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" alt="MathJax logo" src="data:image/png;base64,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"></a>
+</div>
+</body>
+</html>

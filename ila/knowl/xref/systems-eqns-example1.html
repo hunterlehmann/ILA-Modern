@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.24</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para">Solve <a href="systems-of-eqns.html#systems-eqns-example" class="xref" data-knowl="./knowl/xref/systems-eqns-example.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.1">(1.1.1)</a> using the elimination method.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#systems-eqns-example1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical">
+<div class="displaymath process-math">
+\begin{align*}
+\left\{\begin{alignedat}{4}
+x \amp {}+{} \amp 2y \amp {}+{} \amp 3z \amp {}={} \amp 6 \amp {} \\
+2x \amp {}-{} \amp 3y \amp {}+{} \amp 2z \amp {}={} \amp 14 \amp {} \\
+3x \amp {}+{} \amp y \amp {}-{} \amp z \amp {}={} \amp -2 \amp {}
+\end{alignedat}\right.
+\quad\xrightarrow{\text{2nd ${}={}$ 2nd$-2\times$1st}}\quad\amp
+\left\{\begin{alignedat}{4}
+x \amp {}+{} \amp 2y \amp {}+{} \amp 3z \amp {}={} \amp 6 \amp {} \\
+{} \amp {} \amp -7y \amp {}-{} \amp 4z \amp {}={} \amp 2 \amp {} \\
+3x \amp {}+{} \amp y \amp {}-{} \amp z \amp {}={} \amp -2 \amp {}
+\end{alignedat}\right.\\
+{}\quad\xrightarrow{\text{3rd ${}={}$ 3rd$-3\times$1st}}\quad\amp
+\left\{\begin{alignedat}{4}
+x \amp {}+{} \amp 2y \amp {}+{} \amp 3z \amp {}={} \amp 6 \amp {} \\
+{} \amp {} \amp -7y \amp {}-{} \amp 4z \amp {}={} \amp 2 \amp {} \\
+{} \amp {} \amp -5y \amp {}-{} \amp 10z \amp {}={} \amp -20 \amp {}
+\end{alignedat}\right.\\
+{}\quad\xrightarrow{\text{2nd $\longleftrightarrow$ 3rd}}\quad\amp
+\left\{\begin{alignedat}{4}
+x \amp {}+{} \amp 2y \amp {}+{} \amp 3z \amp {}={} \amp 6 \amp {} \\
+{} \amp {} \amp -5y \amp {}-{} \amp 10z \amp {}={} \amp -20 \amp {} \\
+{} \amp {} \amp -7y \amp {}-{} \amp 4z \amp {}={} \amp 2 \amp {}
+\end{alignedat}\right.\\
+{}\quad\xrightarrow{\text{divide 2nd by $-5$}}\quad\amp
+\left\{\begin{alignedat}{4}
+x \amp {}+{} \amp 2y \amp {}+{} \amp \phantom13z \amp {}={} \amp 6 \amp {} \\
+{} \amp {} \amp y \amp {}+{} \amp 2z \amp {}={} \amp 4 \amp {} \\
+{} \amp {} \amp -7y \amp {}-{} \amp 4z \amp {}={} \amp 2 \amp {}
+\end{alignedat}\right.\\
+{}\quad\xrightarrow{\text{3rd ${}={}$ 3rd$+7\times$2nd}}\quad\amp
+\left\{\begin{alignedat}{4}
+x \amp {}+{} \amp 2y \amp {}+{} \amp \phantom1 3z \amp {}={} \amp 6 \amp {} \\
+{} \amp {} \amp y \amp {}+{} \amp 2z \amp {}={} \amp 4 \amp {} \\
+{} \amp {} \amp {} \amp {}-{} \amp 10z \amp {}={} \amp 30 \amp {}
+\end{alignedat}\right.
+\end{align*}
+</div>
+<div class="para">At this point we’ve eliminated both <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> from the third equation, and we can solve <span class="process-math">\(10z=30\)</span> to get <span class="process-math">\(z=3\text{.}\)</span>  Substituting for <span class="process-math">\(z\)</span> in the second equation gives <span class="process-math">\(y+2\cdot3=4\text{,}\)</span> or <span class="process-math">\(y=-2\text{.}\)</span>  Substituting for <span class="process-math">\(y\)</span> and <span class="process-math">\(z\)</span> in the first equation gives <span class="process-math">\(x + 2\cdot(-2) + 3\cdot3 = 6\text{,}\)</span> or <span class="process-math">\(x=3\text{.}\)</span>  Thus the only solution is <span class="process-math">\((x,y,z)=(1,-2,3)\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#systems-eqns-example1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">We can check that our solution is correct by substituting <span class="process-math">\((x,y,z)=(1,-2,3)\)</span> into the original equation:</div>
+<div class="displaymath process-math">
+\begin{align*}
+\left\{\begin{alignedat}{4}
+x \amp {}+{} \amp 2y \amp {}+{} \amp 3z \amp {}={} \amp 6 \amp {} \\
+2x \amp {}-{} \amp 3y \amp {}+{} \amp 2z \amp {}={} \amp 14 \amp {} \\
+3x \amp {}+{} \amp y \amp {}-{} \amp z \amp {}={} \amp -2 \amp {}
+\end{alignedat}\right.
+\quad\xrightarrow{\text{substitute}}\quad
+\left\{\begin{alignedat}{5}
+1 \amp {}+{} \amp 2\cdot( \amp {}-{} \amp 2) \amp {}+{} \amp 3\cdot 3 \amp {}={} \amp 6 \amp {} \\
+2\cdot 1 \amp {}-{} \amp 3\cdot( \amp {}-{} \amp 2) \amp {}+{} \amp 2\cdot 3 \amp {}={} \amp 14 \amp {} \\
+3\cdot 1 \amp {}+{} \amp ( \amp {}-{} \amp 2) \amp {}-{} \amp 3 \amp {}={} \amp -2. \amp {}
+\end{alignedat}\right.
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#systems-eqns-example1-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 1.24.1"><a tabindex="-1" href="#systems-eqns-example1-2" title="Copy heading and permalink for Solution 1.24.1" aria-label="Copy heading and permalink for Solution 1.24.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 1.24"><a tabindex="-1" href="#systems-eqns-example1" title="Copy heading and permalink for Example 1.24" aria-label="Copy heading and permalink for Example 1.24">🔗</a></div>
+</article><span class="incontext"><a class="internal" href="row-reduction.html#systems-eqns-example1">In Context</a></span>
+</body>
+</html>

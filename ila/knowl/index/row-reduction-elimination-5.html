@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<section class="paragraphs"><h2 class="heading"><span class="title">Augmented Matrices and Row Operations.</span></h2>
+<div class="para logical">
+<div class="para">Solving equations by elimination requires writing the variables <span class="process-math">\(x,y,z\)</span> and the equals sign <span class="process-math">\(=\)</span> over and over again, merely as placeholders: all that is changing in the equations is the coefficient <em class="emphasis">numbers</em>.  We can make our life easier by extracting only the numbers, and putting them in a box: </div>
+<div class="displaymath process-math">
+\begin{align*}
+\left\{\begin{alignedat}{4}
+x \amp {}+{} \amp 2y \amp {}+{} \amp 3z \amp {}={} \amp 6 \amp {} \\
+2x \amp {}-{} \amp 3y \amp {}+{} \amp 2z \amp {}={} \amp 14 \amp {} \\
+3x \amp {}+{} \amp y \amp {}-{} \amp z \amp {}={} \amp -2 \amp {}
+\end{alignedat}\right.
+\quad\xrightarrow{\text{becomes}}\quad
+\left(\begin{array}{rrr|r}
+1 \amp 2 \amp 3 \amp 6 \\
+2 \amp -3 \amp 2 \amp 14 \\
+3 \amp 1 \amp -1 \amp -2
+\end{array}\right).
+\end{align*}
+</div>
+<div class="para"> This is called an <dfn class="terminology">augmented matrix</dfn>.  The word “augmented” refers to the vertical line, which we draw to remind ourselves where the equals sign belongs; a <dfn class="terminology">matrix</dfn> is a grid of numbers without the vertical line.  In this notation, our three valid ways of manipulating our equations become <dfn class="terminology">row operations</dfn>: </div>
+<ul class="disc" id="row-reduction-elimination-5-2-13">
+<li>
+<div class="para">
+<em class="alert">Scaling:</em> multiply all entries in a row by a nonzero number. <div class="displaymath process-math">
+\begin{align*}
+\left(\begin{array}{rrr|r}
+1 \amp 2 \amp 3 \amp 6 \\
+2 \amp -3 \amp 2 \amp 14 \\
+3 \amp 1 \amp -1 \amp -2
+\end{array}\right)
+\quad\xrightarrow{R_1 = R_1 \times -3}\quad
+\left(\begin{array}{rrr|r}
+-3 \amp -6 \amp -9 \amp -18 \\
+2 \amp -3 \amp 2 \amp 14 \\
+3 \amp 1 \amp -1 \amp -2
+\end{array}\right)
+\end{align*}
+</div>Here the notation <span class="process-math">\(R_1\)</span> simply means “the first row”, and likewise for <span class="process-math">\(R_2,R_3,\)</span> etc. </div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#row-reduction-elimination-5-2-13-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li>
+<div class="para">
+<em class="alert">Replacement:</em> add a multiple of one row to another, replacing the second row with the result. <div class="displaymath process-math">
+\begin{align*}
+\left(\begin{array}{rrr|r}
+1 \amp 2 \amp 3 \amp 6 \\
+2 \amp -3 \amp 2 \amp 14 \\
+3 \amp 1 \amp -1 \amp -2
+\end{array}\right)
+\quad\xrightarrow{R_2 = R_2 -2\times R_1}\quad
+\left(\begin{array}{rrr|r}
+1 \amp 2 \amp 3 \amp 6 \\
+0 \amp -7 \amp -4 \amp 2 \\
+3 \amp 1 \amp -1 \amp -2
+\end{array}\right)
+\end{align*}
+</div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#row-reduction-elimination-5-2-13-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li>
+<div class="para">
+<em class="alert">Swap:</em> interchange two rows. <div class="displaymath process-math">
+\begin{align*}
+\left(\begin{array}{rrr|r}
+1 \amp 2 \amp 3 \amp 6 \\
+2 \amp -3 \amp 2 \amp 14 \\
+3 \amp 1 \amp -1 \amp -2
+\end{array}\right)
+\quad\xrightarrow{R_1 \longleftrightarrow R_3}\quad
+\left(\begin{array}{rrr|r}
+3 \amp 1 \amp -1 \amp -2 \\
+2 \amp -3 \amp 2 \amp 14 \\
+1 \amp 2 \amp 3 \amp 6
+\end{array}\right)
+\end{align*}
+</div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#row-reduction-elimination-5-2-13-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-elimination-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details class="problem example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.25</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary>
+<article class="problem example-like knowl__content">
+<div class="para">When we wrote our row operations above we used expressions like <span class="process-math">\(R_2 = R_2 - 2 \times R_1\text{.}\)</span>  Of course this does not mean that the second row is equal to the second row minus twice the first row.  Instead it means that we are <em class="emphasis">replacing</em> the second row with the second row minus twice the first row.  This kind of syntax is used frequently in computer programming when we want to change the value of a variable.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-elimination-5-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 1.25"><a tabindex="-1" href="#row-reduction-elimination-5-3" title="Copy heading and permalink for Remark 1.25" aria-label="Copy heading and permalink for Remark 1.25">🔗</a></div>
+</article></details>
+<details class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.26</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary>
+<article class="example example-like knowl__content">
+<div class="para">Solve <a href="systems-of-eqns.html#systems-eqns-example" class="xref" data-knowl="./knowl/xref/systems-eqns-example.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.1">(1.1.1)</a> using row operations.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#systems-eqns-example1b-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical">
+<div class="para">We start by forming an augmented matrix:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/systems-eqns-example1.html">
+\begin{align*}
+\left\{\begin{alignedat}{4}
+x \amp {}+{} \amp 2y \amp {}+{} \amp 3z \amp {}={} \amp 6 \amp {} \\
+2x \amp {}-{} \amp 3y \amp {}+{} \amp 2z \amp {}={} \amp 14 \amp {} \\
+3x \amp {}+{} \amp y \amp {}-{} \amp z \amp {}={} \amp -2 \amp {}
+\end{alignedat}\right.
+\quad\xrightarrow{\text{becomes}}\quad
+\left(\begin{array}{rrr|r}
+1 \amp 2 \amp 3 \amp 6 \\
+2 \amp -3 \amp 2 \amp 14 \\
+3 \amp 1 \amp -1 \amp -2
+\end{array}\right).
+\end{align*}
+</div>
+<div class="para">Eliminating a variable from an equation means producing a zero to the left of the line in an augmented matrix.  First we produce zeros in the first column (i.e. we eliminate <span class="process-math">\(x\)</span>) by subtracting multiples of the first row.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/systems-eqns-example1.html">
+\begin{align*}
+\left(\begin{array}{rrr|r}
+1 \amp 2 \amp 3 \amp 6 \\
+2 \amp -3 \amp 2 \amp 14 \\
+3 \amp 1 \amp -1 \amp -2
+\end{array}\right)
+\quad\xrightarrow{R_2=R_2-2R_1}\quad\amp
+\left(\begin{array}{rrr|r}
+1 \amp 2 \amp 3 \amp 6 \\
+\r0 \amp -7 \amp -4 \amp 2 \\
+3 \amp 1 \amp -1 \amp -2
+\end{array}\right)\\
+{}\quad\xrightarrow{R_3=R_3-3R_1}\quad\amp
+\left(\begin{array}{rrr|r}
+1 \amp 2 \amp 3 \amp 6 \\
+0 \amp -7 \amp -4 \amp 2 \\
+\r0 \amp -5 \amp -10 \amp -20
+\end{array}\right)
+\end{align*}
+</div>
+<div class="para">This was made much easier by the fact that the top-left entry is equal to <span class="process-math">\(1\text{,}\)</span> so we can simply multiply the first row by the number below and subtract.  In order to eliminate <span class="process-math">\(y\)</span> in the same way, we would like to produce a <span class="process-math">\(1\)</span> in the second column.  We could divide the second row by <span class="process-math">\(-7\text{,}\)</span> but this would produce fractions; instead, let’s divide the third by <span class="process-math">\(-5\text{.}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/systems-eqns-example1.html">
+\begin{align*}
+\left(\begin{array}{rrr|r}
+1 \amp 2 \amp 3 \amp 6 \\
+0 \amp -7 \amp -4 \amp 2 \\
+0 \amp -5 \amp -10 \amp -20
+\end{array}\right)
+\quad\xrightarrow{R_3=R_3\div-5}\quad\amp
+\left(\begin{array}{rrr|r}
+1 \amp 2 \amp 3 \amp 6 \\
+0 \amp -7 \amp -4 \amp 2 \\
+0 \amp \r1 \amp 2 \amp 4
+\end{array}\right)\\
+{}\quad\xrightarrow{R_2\longleftrightarrow R_3}\quad\amp
+\left(\begin{array}{rrr|r}
+1 \amp 2 \amp 3 \amp 6 \\
+0 \amp 1 \amp 2 \amp 4 \\
+0 \amp -7 \amp -4 \amp 2
+\end{array}\right)\\
+{}\quad\xrightarrow{R_3 = R_3+7R_2}\quad\amp
+\left(\begin{array}{rrr|r}
+1 \amp 2 \amp 3 \amp 6 \\
+0 \amp 1 \amp 2 \amp 4 \\
+0 \amp \r0 \amp 10 \amp 30
+\end{array}\right)\\
+{}\quad\xrightarrow{R_3 = R_3\div 10}\quad\amp
+\left(\begin{array}{rrr|r}
+1 \amp 2 \amp 3 \amp 6 \\
+0 \amp 1 \amp 2 \amp 4 \\
+0 \amp 0 \amp \r1 \amp 3
+\end{array}\right)
+\end{align*}
+</div>
+<div class="para">We swapped the second and third row just to keep things orderly.  Now we translate this augmented matrix back into a system of equations:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/systems-eqns-example1.html">
+\begin{align*}
+\left(\begin{array}{rrr|r}
+1 \amp 2 \amp 3 \amp 6 \\
+0 \amp 1 \amp 2 \amp 4 \\
+0 \amp 0 \amp 1 \amp 3
+\end{array}\right) \quad\xrightarrow{\text{becomes}}\quad
+\left\{\begin{alignedat}{4}
+x \amp {}+{} \amp 2y \amp {}+{} \amp 3z \amp {}={} \amp 6 \amp {} \\
+{} \amp {} \amp y \amp {}+{} \amp 2z \amp {}={} \amp 4 \amp {} \\
+{} \amp {} \amp {} \amp {} \amp z \amp {}={} \amp 3 \amp {}
+\end{alignedat}\right.
+\end{align*}
+</div>
+<div class="para">Hence <span class="process-math">\(z=3\text{;}\)</span> back-substituting as in <a href="row-reduction.html#systems-eqns-example1" class="xref" data-knowl="./knowl/xref/systems-eqns-example1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.24">Example 24</a> gives <span class="process-math">\((x,y,z)=(1,-2,3)\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#systems-eqns-example1b-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 1.26.1"><a tabindex="-1" href="#systems-eqns-example1b-2" title="Copy heading and permalink for Solution 1.26.1" aria-label="Copy heading and permalink for Solution 1.26.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 1.26"><a tabindex="-1" href="#systems-eqns-example1b" title="Copy heading and permalink for Example 1.26" aria-label="Copy heading and permalink for Example 1.26">🔗</a></div>
+</article></details>
+<article class="insight remark-like"><h3 class="heading">
+<span class="type">Insight</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.27</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para">The process of doing row operations to a matrix does not change the solution set of the corresponding linear equations!<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-elimination-5-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Insight 1.27"><a tabindex="-1" href="#row-reduction-elimination-5-5" title="Copy heading and permalink for Insight 1.27" aria-label="Copy heading and permalink for Insight 1.27">🔗</a></div>
+</article>
+<div class="para">Indeed, the whole point of doing these operations is to solve the equations using the elimination method.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-elimination-5-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.28</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para">Two matrices are called <dfn class="terminology">row equivalent</dfn> if one can be obtained from the other by doing some number of row operations.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-elimination-5-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 1.28"><a tabindex="-1" href="#row-reduction-elimination-5-7" title="Copy heading and permalink for Definition 1.28" aria-label="Copy heading and permalink for Definition 1.28">🔗</a></div>
+</article>
+<div class="para">So the linear equations of row-equivalent matrices have the <em class="emphasis">same solution set</em>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-elimination-5-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.29</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">An Inconsistent System.</span>
+</h3></summary>
+<article class="example example-like knowl__content">
+<div class="para logical">
+<div class="para">Solve the following system of equations using row operations:</div>
+<div class="displaymath process-math">
+\begin{align*}
+\left\{\begin{alignedat}{3}
+x \amp {}+{} \amp y \amp {}={} \amp 2 \amp {} \\
+3x \amp {}+{} \amp 4y \amp {}={} \amp 5 \amp {} \\
+4x \amp {}+{} \amp 5y \amp {}={} \amp 9 \amp {}
+\end{alignedat}\right.
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-elimination-5-9-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical">
+<div class="para">First we put our system of equations into an augmented matrix.</div>
+<div class="displaymath process-math">
+\begin{align*}
+\left\{\begin{alignedat}{3}
+x \amp {}+{} \amp y \amp {}={} \amp 2 \amp {} \\
+3x \amp {}+{} \amp 4y \amp {}={} \amp 5 \amp {} \\
+4x \amp {}+{} \amp 5y \amp {}={} \amp 9 \amp {}
+\end{alignedat}\right.
+\quad\xrightarrow{\text{augmented matrix}}\quad
+\left(\begin{array}{rr|r}
+1 \amp 1 \amp 2 \\
+3 \amp 4 \amp 5 \\
+4 \amp 5 \amp 9
+\end{array}\right)
+\end{align*}
+</div>
+<div class="para">We clear the entries below the top-left using row replacement.</div>
+<div class="displaymath process-math">
+\begin{align*}
+\left(\begin{array}{rr|r}
+1 \amp 1 \amp 2 \\
+3 \amp 4 \amp 5 \\
+4 \amp 5 \amp 9
+\end{array}\right)
+\quad\xrightarrow{R_2=R_2-3R_1}\quad\amp
+\left(\begin{array}{rr|r}
+1 \amp 1 \amp 2 \\
+\r0 \amp 1 \amp -1 \\
+4 \amp 5 \amp 9
+\end{array}\right)\\
+{}\quad\xrightarrow{R_3=R_3-4R_1}\quad\amp
+\left(\begin{array}{rr|r}
+1 \amp 1 \amp 2 \\
+0 \amp 1 \amp -1 \\
+\r0 \amp 1 \amp 1
+\end{array}\right)
+\end{align*}
+</div>
+<div class="para">Now we clear the second entry from the last row.</div>
+<div class="displaymath process-math">
+\begin{align*}
+\left(\begin{array}{rr|r}
+1 \amp 1 \amp 2 \\
+0 \amp 1 \amp -1 \\
+0 \amp 1 \amp 1
+\end{array}\right)
+\quad\xrightarrow{R_3=R_3-R_2}\quad
+\left(\begin{array}{rr|r}
+1 \amp 1 \amp 2 \\
+0 \amp 1 \amp -1 \\
+0 \amp \r0 \amp 2
+\end{array}\right)
+\end{align*}
+</div>
+<div class="para">This translates back into the system of equations</div>
+<div class="displaymath process-math">
+\begin{align*}
+\left\{\begin{alignedat}{3}
+x \amp {}+{} \amp y \amp {}={} \amp 2 \amp {} \\
+{} \amp {} \amp y \amp {}={} \amp -1 \amp {} \\
+{} \amp {} \amp 0 \amp {}={} \amp 2. \amp {}
+\end{alignedat}\right.
+\end{align*}
+</div>
+<div class="para">Our original system has the same solution set as this system.  But this system has no solutions: there are no values of <span class="process-math">\(x,y\)</span> making the third equation true!  We conclude that our original equation was inconsistent.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#row-reduction-elimination-5-9-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 1.29.1"><a tabindex="-1" href="#row-reduction-elimination-5-9-3" title="Copy heading and permalink for Solution 1.29.1" aria-label="Copy heading and permalink for Solution 1.29.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 1.29: An Inconsistent System"><a tabindex="-1" href="#row-reduction-elimination-5-9" title="Copy heading and permalink for Example 1.29: An Inconsistent System" aria-label="Copy heading and permalink for Example 1.29: An Inconsistent System">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Paragraphs: Augmented Matrices and Row Operations"><a tabindex="-1" href="#row-reduction-elimination-5" title="Copy heading and permalink for Paragraphs: Augmented Matrices and Row Operations" aria-label="Copy heading and permalink for Paragraphs: Augmented Matrices and Row Operations">🔗</a></div>
+</section><span class="incontext"><a class="internal" href="row-reduction.html#row-reduction-elimination-5">In Context</a></span>
+</body>
+</html>
